@@ -1,0 +1,15 @@
+<svg width="{{ include.size | default: 64 }}" height="{{ include.size | default: 64 }}" version="1.1" viewBox="0 0 16.93 16.93" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Logo 5 Bola</title>
+ <defs>
+  <filter id="a" x="-.009265" y="-.009265" width="1.022" height="1.023" color-interpolation-filters="sRGB">
+   <feFlood flood-color="rgb(0,0,0)" flood-opacity=".6327" result="flood"/>
+   <feComposite dy="0.17999999999999999" in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+   <feGaussianBlur in="composite1" result="blur" stdDeviation="0.1953255"/>
+   <feOffset dx="0.17999999999999999" dy="0.22" result="offset"/>
+   <feComposite in="SourceGraphic" in2="offset" result="composite2"/>
+  </filter>
+ </defs>
+ <g transform="translate(-14.44 -.9234)">
+  <path transform="matrix(.2646 0 0 .2646 -.9014 1.514)" d="m90 4.469c-13.97-2.077e-4 -25.3 11.33-25.3 25.3-2.08e-4 13.97 11.33 25.3 25.3 25.3 13.97 2.08e-4 25.3-11.33 25.3-25.3 2.1e-4 -13.97-11.33-25.3-25.3-25.3zm-4.217 8.961c4.725-0.05312 9.277 2.93 11.12 7.283 2.161 4.758 0.7452 10.8-3.303 14.11-3.943 3.43-10.14 3.802-14.46 0.8672-4.413-2.797-6.539-8.628-4.965-13.61 1.419-5.025 6.392-8.729 11.61-8.648zm-1.795 2.436-2.404 8.66 1.85 0.5137c0.9293-0.157 1.68-0.171 2.605 0.08594 1.773 0.4925 2.876 1.797 2.141 4.443-0.6995 2.518-2.453 3.553-4.611 2.953-1.49-0.414-2.445-1.262-3.225-2.641l-1.766 0.9766c0.9578 1.733 2.297 2.991 4.48 3.598 3.571 0.9921 6.625-0.7331 7.574-4.15 0.9493-3.417-0.4658-5.996-3.369-6.803-0.925-0.257-1.906-0.3084-2.934-0.0957l1.406-5.062 6.705 1.863 0.8477-1.758z" fill="#fff" filter="url(#a)" style="mix-blend-mode:normal"/>
+ </g>
+</svg>

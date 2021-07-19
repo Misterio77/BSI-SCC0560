@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cinco Bola | {{ page.title }}</title>
+    <title>{{ page.title }}</title>
     <link rel="canonical" href="https://cincobola.misterio.me{{ page.url }}" />
     <meta
       name="description"
@@ -16,23 +16,15 @@
     <!-- Pre carregar estilos, fonte, e scripts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preload" href="https://code.iconify.design/1/1.0.6/iconify.min.js" as="script"/>
-    <link rel="preload" href="/assets/imports/normalize.css" as="style" />
+    <link rel="preload" href="/assets/styles/mvp.css" as="style" />
     <!-- Requisitar assets nescessários ANTES da página carregar -->
     <link
       href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=block"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/imports/normalize.css" />
+    <link rel="stylesheet" href="/assets/styles/mvp.css" />
   </head>
   <body>
-    <header>
-      <!-- include nav.html -->
-    </header>
-    <main>
-      {{ content }}
-    </main>
-    <footer>
-      <!-- include footer.html -->
-    </footer>
+    {{ content }}
   </body>
 </html>

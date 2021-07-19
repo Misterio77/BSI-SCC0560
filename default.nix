@@ -7,5 +7,5 @@ let
   };
 in stdenv.mkDerivation {
   name = "cincobola";
-  buildInputs = [gems ruby];
+  buildInputs = [gems ruby nodePackages.prettier];
 }
