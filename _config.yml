@@ -1,0 +1,10 @@
+title: Cincobola
+email: eu@misterio.me
+timezone: America/Sao_Paulo
+exclude:
+  - default.nix
+  - gemset.nix
+  - Gemfile
+  - Gemfile.lock
+sass:
+  style: compressed
