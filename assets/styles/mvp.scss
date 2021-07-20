@@ -505,7 +505,7 @@ blockquote footer {
     font-size: 1.8em;
     color: var(--color-bg);
 }
-@media only screen and (max-width: 580px) {
+@media (max-width: 580px) {
     .navbar-logo h1 {
         display: none;
     }
