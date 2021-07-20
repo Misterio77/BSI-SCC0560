@@ -488,45 +488,58 @@ blockquote footer {
     padding: 1.5rem 0;
 }
 
-/* Invert navbar color */
-header nav {
-    background: var(--color);
-    /* border-bottom: 3px solid var(--color); */
+header nav.fixed {
+    /* Fix navbar on top */
+    z-index: 100;
     position: fixed;
     width: 90%;
     left: 0;
     top: 0;
     padding: 0 5%;
 }
-header nav a b,
-header nav a strong,
-header nav button {
+header nav svg path,
+header nav svg polygon {
+    fill: var(--color);
+}
+
+/* Invert navbar color */
+header nav.solid {
+    background: var(--color);
+}
+header nav.solid a b,
+header nav.solid a strong,
+header nav.solid button {
+    /* border-bottom: 3px solid var(--color); */
     background-color: var(--color-bg);
     border-color: var(--color-bg);
     color: var(--color);
 }
-header nav a em,
-header nav a i {
+header nav.solid a em,
+header nav.solid a i {
     border-color: var(--color-bg);
     color: var(--color-bg);
 }
-header nav svg path,
-header nav svg polygon {
+header nav.solid svg path,
+header nav.solid svg polygon {
     fill: var(--color-bg);
+}
+header nav.solid a {
+    text-decoration-color: var(--color);
+}
+header nav.solid a h1 {
+    color: var(--color-bg);
 }
 
 /* Adjust navbar logo position and size */
 a.navbar-logo {
     display: inline-flex;
     align-items: center;
-    text-decoration-color: var(--color-bg);
 }
 a.navbar-logo svg {
     margin-right: 0.2em;
 }
 a.navbar-logo h1 {
     font-size: 1.8em;
-    color: var(--color-bg);
 }
 
 /* Make more room in smaller screens */
@@ -547,15 +560,21 @@ a.navbar-logo h1 {
     }
 }
 
+/* Icon sizes */
 .card-icon {
     font-size: 2.5em;
 }
 .logo-icon {
     font-size: 4em;
 }
+.splash-icon {
+    font-size: 10em;
+}
 .full-card-icon {
     font-size: 14em;
 }
+
+/* Invert colors on full cards */
 .full-card {
     text-align: center;
     background: var(--color);

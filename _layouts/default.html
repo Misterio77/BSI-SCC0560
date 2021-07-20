@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="pt">
   <head>
@@ -5,18 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }}</title>
     <link rel="canonical" href="https://cincobola.misterio.me{{ page.url }}" />
-    <meta name="theme-color" content="#9c5763">
+    <meta name="theme-color" content="#9c5763" />
     <meta
       name="description"
       content="{% if page.description %}{{ page.description }}{% else %} {{ site.description }}{% endif %}"
     />
     {% if page.noindex == true %}
     <!-- Flag de não indexar, caso a página peça -->
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex" />
     {% endif %}
     <!-- Pre carregar estilos, fonte, e scripts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preload" href="https://code.iconify.design/1/1.0.6/iconify.min.js" as="script"/>
+    <link
+      rel="preload"
+      href="https://code.iconify.design/1/1.0.6/iconify.min.js"
+      as="script"
+    />
     <link rel="preload" href="/assets/styles/mvp.css" as="style" />
     <!-- Requisitar alguns assets nescessários antes da página -->
     <link
@@ -26,7 +32,35 @@
     <link rel="stylesheet" href="/assets/styles/mvp.css" />
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   </head>
-  <body class="{{ layout.colors }}">
+  <body class="{{- layout.colors -}}">
     {{ content }}
+    {% if page.solid-nav-on-scroll -%}
+    <script>
+      var navbar = document.getElementsByTagName("nav")[0];
+      navbar.classList.remove("solid");
+      var solidNavOnScroll = function() {
+        if (window.scrollY >= {{ page.solid-nav-on-scroll }}) {
+          navbar.classList.add("solid");
+        } else {
+          navbar.classList.remove("solid");
+        }
+      }
+      window.addEventListener("scroll", solidNavOnScroll);
+    </script>
+    {%- endif %}
+    {% if page.show-logo-on-scroll -%}
+    <script>
+      var logo = document.getElementsByClassName("navbar-logo")[0];
+      logo.style.visibility = "hidden";
+      var showLogoOnScroll = function() {
+        if (window.scrollY >= {{ page.show-logo-on-scroll }}) {
+          logo.style.visibility = "visible";
+        } else {
+          logo.style.visibility = "hidden";
+        }
+      }
+      window.addEventListener("scroll", showLogoOnScroll);
+    </script>
+    {%- endif %}
   </body>
 </html>
