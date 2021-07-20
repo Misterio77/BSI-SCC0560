@@ -18,14 +18,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preload" href="https://code.iconify.design/1/1.0.6/iconify.min.js" as="script"/>
     <link rel="preload" href="/assets/styles/mvp.css" as="style" />
-    <!-- Requisitar assets nescessários ANTES da página carregar -->
+    <!-- Requisitar alguns assets nescessários antes da página -->
     <link
       href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=block"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/styles/mvp.css" />
+    <script src="//code.iconify.design/1/1.0.7/iconify.min.js"></script>
   </head>
-  <body>
+  <body class="{{ layout.colors }}">
     {{ content }}
   </body>
 </html>
