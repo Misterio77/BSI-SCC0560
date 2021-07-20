@@ -2,25 +2,12 @@
 layout: default
 title: Cinco Bola
 ---
-
 <header>
-  <nav>
-      <a href="/" class="navbar-logo">
-        {% include logo.svg size=72 %}
-        <h1>Cinco Bola</h1>
-      </a>
-    <ul>
-      <li>
-        <a href="/shops"><i>Lojas</i></a>
-      </li>
-      <li>
-        <a href="/login"><b>Console</b></a>
-      </li>
-    </ul>
-  </nav>
+  {% include cincobola-nav.html %}
 </header>
 <main>
   {{ content }}
 </main>
 <footer>
+  {% include footer.html %}
 </footer>
