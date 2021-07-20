@@ -297,7 +297,7 @@ button {
     font-weight: bold;
     line-height: var(--line-height);
     margin: 0.5rem 0;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
 }
 
 button {
@@ -331,7 +331,7 @@ a i {
     border-radius: var(--border-radius);
     color: var(--color);
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
 }
 
 nav a em,
@@ -505,9 +505,20 @@ blockquote footer {
     font-size: 1.8em;
     color: var(--color-bg);
 }
-@media (max-width: 580px) {
+@media (max-width: 520px) {
     .navbar-logo h1 {
         display: none;
+    }
+    nav {
+        width: 98%;
+        padding: 0 1%;
+    }
+    header a b,
+    header a em,
+    header a i,
+    header a strong {
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
     }
 }
 svg path {
