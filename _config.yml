@@ -1,4 +1,4 @@
-title: Cincobola
+title: Cinco Bola
 email: eu@misterio.me
 timezone: America/Sao_Paulo
 exclude:
@@ -7,4 +7,11 @@ exclude:
   - Gemfile
   - Gemfile.lock
 sass:
-  style: pretty
+  style: compact
+defaults:
+  -
+    scope:
+      path: "README.md"
+    values:
+      permalink: "README"
+      layout: cincobola
