@@ -23,51 +23,13 @@ title: Cinco Bola | Login
       autocomplete="current-password"
       name="password"
       id="password"
+      placeholder="••••••••••••"
     />
 
     <button type="submit">Login</button>
 
     <footer>
-      <a href="">Não tem uma conta?</a>
-    </footer>
-  </form>
-  <form method="get" action="/console">
-    <header><h1>Crie sua conta</h1></header>
-
-    <label for="name"> Nome completo: </label>
-    <input type="text" name="name" id="name" placeholder="Fulano da Silva" />
-
-    <label for="cpf"> CPF: </label>
-    <input
-      type="text"
-      inputmode="numeric"
-      name="cpf"
-      id="cpf"
-      placeholder="123.456.789-00"
-      pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})"
-    />
-
-    <label for="email"> Email: </label>
-    <input
-      type="email"
-      inputmode="email"
-      autocomplete="email"
-      name="email"
-      id="email"
-      placeholder="fulano@exemplo.com"
-    />
-
-    <label for="password"> Crie uma senha: </label>
-    <input
-      type="password"
-      autocomplete="new-password"
-      name="password"
-      id="password"
-    />
-
-    <button type="submit">Registrar</button>
-    <footer>
-      <a href="">Já tem uma conta?</a>
+      <a href="/register">Não tem uma conta?</a>
     </footer>
   </form>
 </section>
