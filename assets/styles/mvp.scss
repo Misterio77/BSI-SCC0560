@@ -489,6 +489,7 @@ blockquote footer {
 }
 
 header nav.fixed {
+    background: var(--color-bg);
     /* Fix navbar on top */
     z-index: 100;
     position: fixed;
