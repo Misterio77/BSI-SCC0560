@@ -12,6 +12,11 @@ sass:
 defaults:
   -
     scope:
+      path: ""
+    values:
+      solid-nav-on-scroll: 100
+  -
+    scope:
       path: "README.md"
     values:
       permalink: "README"
