@@ -4,11 +4,23 @@ title: Cinco Bola
 ---
 
 <header>
-  {% include cincobola/header.html %}
+  <nav>
+      <a href="/" class="navbar-logo">
+        {% include logo.svg size=72 %}
+        <h1>Cinco Bola</h1>
+      </a>
+    <ul>
+      <li>
+        <a href="{% link shops/index.md %}"><i>Lojas</i></a>
+      </li>
+      <li>
+        <a href="{% link login.html %}"><b>Console</b></a>
+      </li>
+    </ul>
+  </nav>
 </header>
 <main>
   {{ content }}
 </main>
 <footer>
-  <!-- { include cincobola/footer.html %} -->
 </footer>
