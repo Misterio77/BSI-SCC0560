@@ -10,7 +10,7 @@
 
     --color-bg: #fff;
     --color-bg-secondary: #e9e9e9;
-    --color-shadow: #f4f4f4;
+    --color-shadow: #000;
     --color-text: #000;
     --color-text-secondary: #999;
 
@@ -36,7 +36,7 @@
 
         --color-bg: #333;
         --color-bg-secondary: #555;
-        --color-shadow: #bbbbbb20;
+        --color-shadow: #111111;
         --color-text: #f7f7f7;
         --color-text-secondary: #aaa;
     }
@@ -143,8 +143,8 @@ nav {
     justify-content: space-between;
     margin-bottom: 7rem;
 
-    background: var(--color-bg);
-    border-bottom: 3px solid var(--color);
+    background: var(--color);
+    /* border-bottom: 3px solid var(--color); */
     position: fixed;
     width: 90%;
     left: 0;
@@ -317,6 +317,14 @@ button {
     color: var(--color-bg);
 }
 
+nav a b,
+nav a strong,
+nav button {
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-bg);
+    color: var(--color);
+}
+
 a em,
 a i {
     border: 2px solid var(--color);
@@ -324,6 +332,12 @@ a i {
     color: var(--color);
     display: inline-block;
     padding: 1rem 2rem;
+}
+
+nav a em,
+nav a i {
+    border: 2px solid var(--color-bg);
+    color: var(--color-bg);
 }
 
 article aside a {
@@ -489,7 +503,8 @@ blockquote footer {
 }
 .navbar-logo h1 {
     font-size: 1.8em;
+    color: var(--color-bg);
 }
 svg path {
-    fill: var(--color);
+    fill: var(--color-bg);
 }

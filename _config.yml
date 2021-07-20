@@ -7,4 +7,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
 sass:
-  style: compressed
+  style: pretty
