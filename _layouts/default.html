@@ -36,7 +36,7 @@
     {{ content }}
     {% if page.inverted-nav-on-scroll -%}
     <script>
-      var navbar = document.getElementsByTagName("nav")[0];
+      var navbar = document.querySelectorAll("nav.fixed")[0];
       navbar.classList.remove("inverted");
       var invertedNavOnScroll = function() {
         if (window.scrollY >= {{ page.inverted-nav-on-scroll }}) {
@@ -50,7 +50,7 @@
     {%- endif %}
     {% if page.show-logo-on-scroll -%}
     <script>
-      var logo = document.getElementsByClassName("navbar-logo")[0];
+      var logo = document.querySelectorAll("nav .logo")[0];
       logo.style.visibility = "hidden";
       var showLogoOnScroll = function() {
         if (window.scrollY >= {{ page.show-logo-on-scroll }}) {
