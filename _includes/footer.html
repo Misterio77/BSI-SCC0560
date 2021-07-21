@@ -1,12 +1,30 @@
 <nav>
   <small>
   <a href="/" aria-label="Cinco Bola">
-    {%- include logo.svg class="logo-icon" -%}
+    {%- include logos/cincobola.svg class="logo-icon" -%}
   </a>
   </small>
   <ul>
-    <li><a href="/terms">Termos</a></li>
-    <li><a href="/contact">Contato</a></li>
+    <li>
+      <a
+        {% if page.url == "/shops/" %} aria-current="page" href="#"
+        {% else %} href="/shops"
+        {% endif %}
+      >Lojas</a>
+    </li>
+    <li>
+      <a
+        {% if page.url == "/console/" %} aria-current="page" href="#"
+        {% else %} href="/login"
+        {% endif %}
+      >Console</a>
+    </li>
+    <li>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.gnu.org/licenses/gpl-3.0.html">Termos</a>
+    </li>
+    <li>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Contato</a>
+    </li>
   </ul>
 </nav>
 <nav>

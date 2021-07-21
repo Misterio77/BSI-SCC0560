@@ -51,6 +51,15 @@
   }
 }
 
+.uniesquina {
+  --color: #28645f;
+  --color-accent: #28645f15;
+  @media (prefers-color-scheme: dark) {
+    --color: #8bddd1;
+    --color-accent: #8bddd14f;
+  }
+}
+
 /* MVP.css v1.7.4 - https://github.com/andybrewer/mvp */
 /* Modified by Gabriel Fontes where marked by comments, also converted to SCSS */
 
@@ -218,7 +227,7 @@ button {
   font-weight: bold;
   line-height: var(--line-height);
   margin: 0.5rem 0;
-  padding: 1rem 1.5rem;
+  padding: 0.8rem 1.1rem;
 }
 
 a b,
@@ -227,6 +236,12 @@ button {
   border: 2px solid var(--color);
   color: var(--color-bg);
   background-color: var(--color);
+  svg {
+    path,
+    polygon {
+      fill: var(--color-bg);
+    }
+  }
 }
 a i,
 a em {
@@ -354,6 +369,14 @@ form {
   header {
     margin: 1rem 0;
     padding: 1rem 0;
+  }
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0;
+    div {
+      padding-right: 1rem;
+    }
   }
 }
 
@@ -528,6 +551,16 @@ nav {
     }
   }
 
+  &.breadcrumb {
+    li {
+      &::before {
+        content: ">"
+      }
+      &:first-child::before {
+        content: ""
+      }
+    }
+  }
   /* Adjust navbar logo position and size */
   .logo {
     display: inline-flex;
@@ -539,6 +572,7 @@ nav {
 
     h1 {
       font-size: 1.8em;
+      margin-right: 0.4em;
     }
     @media (max-width: 520px) {
       h1 {
@@ -609,8 +643,18 @@ nav {
     }
   }
 }
+a[aria-current] {
+  filter: brightness(0.8);
+  cursor: default;
+  &:hover {
+    text-decoration-line: none;
+  }
+}
 
 /* Icon sizes */
+.nav-icon {
+  font-size: 1.8em;
+}
 .card-icon {
   font-size: 2.5em;
 }
