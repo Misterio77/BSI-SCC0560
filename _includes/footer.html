@@ -20,15 +20,59 @@
       >Console</a>
     </li>
     <li>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.gnu.org/licenses/gpl-3.0.html">Termos</a>
-    </li>
-    <li>
       <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Contato</a>
     </li>
   </ul>
+  <div>
+    <a class="reset-scheme" onclick="resetScheme()" style="visibility: hidden;">
+      <span class="iconify nav-icon" data-icon="mdi:invert-colors-off"></span>
+    </a>
+    <a class="toggle-scheme" onclick="toggleScheme()">
+      <span class="iconify nav-icon" data-icon="mdi:invert-colors"></span>
+    </a>
+  </div>
 </nav>
 <nav>
 <small>
   <p>© oi do boa noite da Helen</p>
 </small>
 </nav>
+<script>
+  // Alterna o local storage e atualiza o tema
+  function toggleScheme() {
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("preferred-scheme", "light");
+    } else {
+      localStorage.setItem("preferred-scheme", "dark");
+    }
+    updateScheme();
+  }
+  // Remove o local storage e atualiza o tema
+  function resetScheme() {
+    localStorage.removeItem("preferred-scheme");
+    updateScheme();
+  }
+
+  // Atualiza a classe do body e seta a visibilidade do botão reset
+  // de acordo com a preferência
+  function updateScheme() {
+    if (localStorage.getItem("preferred-scheme") == "dark") {
+        document.body.classList.add("dark");
+        document.querySelector(".reset-scheme").style.visibility = "visible";
+    } else if (localStorage.getItem("preferred-scheme") == "light") {
+        document.body.classList.remove("dark");
+        document.querySelector(".reset-scheme").style.visibility = "visible";
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.body.classList.add("dark");
+        document.querySelector(".reset-scheme").style.visibility = "hidden";
+    } else {
+        document.body.classList.remove("dark");
+        document.querySelector(".reset-scheme").style.visibility = "hidden";
+    }
+  }
+
+  // Troca inicial de tema 
+  updateScheme();
+  // Adicionar listener pra reagir a mudanças
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", updateScheme);
+</script>
