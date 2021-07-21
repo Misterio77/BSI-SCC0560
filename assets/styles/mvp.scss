@@ -605,12 +605,24 @@ nav {
   &.inverted {
     background: var(--color);
 
+    svg {
+      path,
+      polygon {
+        fill: var(--color-bg);
+      }
+    }
     a {
       b,
       strong {
         background-color: var(--color-bg);
         border-color: var(--color-bg);
         color: var(--color);
+        svg {
+          path,
+          polygon {
+            fill: var(--color);
+          }
+        }
       }
     }
 
@@ -618,6 +630,15 @@ nav {
       background-color: var(--color-bg);
       border-color: var(--color-bg);
       color: var(--color);
+    }
+
+    a {
+      color: var(--color-bg);
+      text-decoration-color: var(--color-bg);
+
+      h1 {
+        color: var(--color-bg);
+      }
     }
 
     a {
@@ -629,21 +650,6 @@ nav {
       }
     }
 
-    svg {
-      path,
-      polygon {
-        fill: var(--color-bg);
-      }
-    }
-
-    a {
-      color: var(--color-bg);
-      text-decoration-color: var(--color-bg);
-
-      h1 {
-        color: var(--color-bg);
-      }
-    }
   }
 }
 a[aria-current] {
