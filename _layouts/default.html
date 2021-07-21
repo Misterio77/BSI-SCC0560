@@ -34,18 +34,18 @@
   </head>
   <body class="{{- layout.colors -}}">
     {{ content }}
-    {% if page.solid-nav-on-scroll -%}
+    {% if page.inverted-nav-on-scroll -%}
     <script>
       var navbar = document.getElementsByTagName("nav")[0];
-      navbar.classList.remove("solid");
-      var solidNavOnScroll = function() {
-        if (window.scrollY >= {{ page.solid-nav-on-scroll }}) {
-          navbar.classList.add("solid");
+      navbar.classList.remove("inverted");
+      var invertedNavOnScroll = function() {
+        if (window.scrollY >= {{ page.inverted-nav-on-scroll }}) {
+          navbar.classList.add("inverted");
         } else {
-          navbar.classList.remove("solid");
+          navbar.classList.remove("inverted");
         }
       }
-      window.addEventListener("scroll", solidNavOnScroll);
+      window.addEventListener("scroll", invertedNavOnScroll);
     </script>
     {%- endif %}
     {% if page.show-logo-on-scroll -%}

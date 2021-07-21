@@ -14,7 +14,7 @@ defaults:
     scope:
       path: ""
     values:
-      solid-nav-on-scroll: 100
+      inverted-nav-on-scroll: 100
   -
     scope:
       path: "README.md"

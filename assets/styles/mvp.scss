@@ -1,9 +1,9 @@
 ---
 ---
-/* MVP.css v1.7.4 - https://github.com/andybrewer/mvp */
 
 :root {
     --color: #4d2364;
+    --color-accent: #4d236415;
     --color-bg: #eee;
     --color-bg-secondary: #999;
     --color-shadow: #bbb;
@@ -25,15 +25,18 @@
 
 .caaso {
     --color: #a67e04;
+    --color-accent: #a67e0415;
 }
 
 .federupa {
     --color: #9f0000;
+    --color-accent: #9f000015;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --color: #b88bdd;
+        --color-accent: #b88bdd4f;
         --color-bg: #222;
         --color-bg-secondary: #555;
         --color-shadow: #333;
@@ -42,16 +45,19 @@
     }
     .caaso {
         --color: #fdd354;
+        --color-accent: #fdd3544f;
     }
 
     .federupa {
         --color: #d74045;
+        --color-accent: #d740454f;
     }
 }
 
+/* MVP.css v1.7.4 - https://github.com/andybrewer/mvp */
 /* Layout */
 article aside {
-    background: var(--color);
+    background: var(--color-accent);
     border-left: 4px solid var(--color);
     padding: 0.01rem 0.8rem;
 }
@@ -206,7 +212,7 @@ nav ul li ul li a {
 /* Typography */
 code,
 samp {
-    background-color: var(--color);
+    background-color: var(--color-accent);
     border-radius: var(--border-radius);
     color: var(--color-text);
     display: inline-block;
@@ -466,7 +472,7 @@ table tr td:first-child {
 }
 
 table tr:nth-child(even) {
-    background-color: var(--color);
+    background-color: var(--color-accent);
 }
 
 /* Quotes */
@@ -504,30 +510,30 @@ header nav svg polygon {
 }
 
 /* Invert navbar color */
-header nav.solid {
+header nav.inverted {
     background: var(--color);
 }
-header nav.solid a b,
-header nav.solid a strong,
-header nav.solid button {
-    /* border-bottom: 3px solid var(--color); */
+header nav.inverted a b,
+header nav.inverted a strong,
+header nav.inverted button {
     background-color: var(--color-bg);
     border-color: var(--color-bg);
     color: var(--color);
 }
-header nav.solid a em,
-header nav.solid a i {
+header nav.inverted a em,
+header nav.inverted a i {
     border-color: var(--color-bg);
     color: var(--color-bg);
 }
-header nav.solid svg path,
-header nav.solid svg polygon {
+header nav.inverted svg path,
+header nav.inverted svg polygon {
     fill: var(--color-bg);
 }
-header nav.solid a {
-    text-decoration-color: var(--color);
+header nav.inverted a {
+    color: var(--color-bg);
+    text-decoration-color: var(--color-bg);
 }
-header nav.solid a h1 {
+header nav.inverted a h1 {
     color: var(--color-bg);
 }
 
