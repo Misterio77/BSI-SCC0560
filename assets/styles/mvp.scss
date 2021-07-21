@@ -36,7 +36,8 @@
 .caaso {
   --color: #a67e04;
   --color-accent: #a67e0415;
-  .dark {
+  &.dark,
+  .dark & {
     --color: #fdd354;
     --color-accent: #fdd3544f;
   }
@@ -45,7 +46,8 @@
 .federupa {
   --color: #9f0000;
   --color-accent: #9f000015;
-  .dark {
+  &.dark,
+  .dark & {
     --color: #d74045;
     --color-accent: #d740454f;
   }
@@ -54,7 +56,8 @@
 .uniesquina {
   --color: #28645f;
   --color-accent: #28645f15;
-  .dark {
+  &.dark,
+  .dark & {
     --color: #8bddd1;
     --color-accent: #8bddd14f;
   }
