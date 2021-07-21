@@ -14,24 +14,23 @@
     />
     <link rel="icon" href="data:,">
     {% if page.noindex == true %}
-    <!-- Flag de não indexar, caso a página peça -->
+    <!-- Flag de não indexar, caso a página queira -->
     <meta name="robots" content="noindex" />
     {% endif %}
     <!-- Pre carregar estilos, fonte, e scripts -->
+    <link rel="preload" href="/assets/styles/mvp.css" as="style" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       rel="preload"
       href="https://code.iconify.design/1/1.0.6/iconify.min.js"
       as="script"
     />
-    <link rel="preload" href="/assets/styles/mvp.css" as="style" />
-    <!-- Requisitar alguns assets nescessários antes da página -->
+    <!-- Carregar estilo principal e fontes antes da pagina -->
+    <link rel="stylesheet" href="/assets/styles/mvp.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=block"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/styles/mvp.css" />
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   </head>
   <body class="{{- layout.colors -}}">
     {{ content }}
@@ -63,5 +62,6 @@
       window.addEventListener("scroll", showLogoOnScroll);
     </script>
     {%- endif %}
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   </body>
 </html>
