@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }}</title>
+    <title>{% if page.name %}{{ page.name }} | {% endif %}{{ page.title }}</title>
     <link rel="canonical" href="https://cincobola.misterio.me{{ page.url }}" />
     <meta name="theme-color" content="#9c5763" />
     <meta
@@ -33,7 +33,7 @@
     />
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   </head>
-  <body class="{{- layout.colors -}}">
+  <body class="{{- page.slug -}}">
     {{ content }}
     {% if page.inverted-nav-on-scroll -%}
     <script>

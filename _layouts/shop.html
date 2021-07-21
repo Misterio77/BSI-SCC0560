@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<style>
+.{{ page.slug }} {
+  --color: {{ page.dark-color }};
+  --color-accent: {{ page.dark-color }}15;
+}
+.{{ page.slug }}.dark {
+    --color: {{ page.light-color }};
+    --color-accent: {{ page.light-color }}4f;
+}
+</style>
+<header>
+  <nav class="fixed">
+      <a href="/shops/{{ page.slug }}" class="logo">
+        <section class="logo-icon">{{ page.logo }}</section>
+        <h1>{{ page.name }}</h1>
+      </a>
+      <ul>
+        <li>
+          <a href="/shops/{{ page.slug }}/cart" aria-label="Carrinho"><b>
+            <span class="iconify nav-icon" data-icon="mdi:cart"></span>
+            </b></a>
+        </li>
+        <li>
+          <a href="/shops/{{ page.slug }}/profile" aria-label="Perfil"><i>
+            <span class="iconify nav-icon" data-icon="mdi:account"></span>
+          </i></a>
+        </li>
+      </ul>
+  </nav>
+</header>
+<main>
+  {{ content }}
+</main>
+<footer>
+  {% include footer.html %}
+</footer>

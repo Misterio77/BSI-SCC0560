@@ -1,0 +1,33 @@
+---
+layout: cincobola
+title: Cinco Bola | Lojas
+---
+
+<style>
+{% for shop in site.shops %}
+.{{ shop.slug }} {
+  --color: {{ shop.dark-color }};
+  --color-accent: {{ shop.dark-color }}15;
+}
+.dark .{{ shop.slug }} {
+    --color: {{ shop.light-color }};
+    --color-accent: {{ shop.light-color }}4f;
+}
+{% endfor %}
+</style>
+
+<header>
+  <h1>Conheça as lojas em nossa plataforma</h1>
+</header>
+<section>
+  {% for shop in site.shops %}
+  <a href="/shops/{{ shop.slug }}" aria-label="{{ shop.name }}" class="{{ shop.slug }}">
+    <aside class="inverted">
+      <section>
+        <h2>{{ shop.name }}</h2>
+        <section class="full-card-icon">{{ shop.logo }}</section>
+      </section>
+    </aside>
+  </a>
+  {% endfor %}
+</section>

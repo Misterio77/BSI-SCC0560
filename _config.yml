@@ -9,6 +9,18 @@ exclude:
   - Gemfile.lock
 sass:
   style: compact
+collections:
+  shops:
+    light-color: "#dddddd"
+    dark-color: "#333333"
+    name: "Loja X"
+    slug: "x"
+    output: true
+  products:
+    name: "Camiseta"
+    price: 19.00
+    inventory: 10
+    output: true
 defaults:
   -
     scope:

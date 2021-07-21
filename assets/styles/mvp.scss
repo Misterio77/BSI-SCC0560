@@ -33,16 +33,6 @@
   }
 }
 
-.caaso {
-  --color: #a67e04;
-  --color-accent: #a67e0415;
-  &.dark,
-  .dark & {
-    --color: #fdd354;
-    --color-accent: #fdd3544f;
-  }
-}
-
 .federupa {
   --color: #9f0000;
   --color-accent: #9f000015;
@@ -570,7 +560,7 @@ nav {
     align-items: center;
 
     svg {
-      margin-right: 0.2em;
+      margin-right: 0.4em;
     }
 
     h1 {
