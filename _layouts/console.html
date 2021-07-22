@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<header>
+  <nav class="fixed">
+    <a href="/console/{{ page.shop-slug }}" class="logo">
+        {% if page.shop-slug %}{%- include logos/{{ page.shop-slug }}.svg class="logo-icon" -%}{% endif %}
+        <h1>{{ page.shop-name }}</h1>
+        Console
+      </a>
+      <ul>
+        <li>
+          <a href="/shops/{{ page.shop-slug }}"><strong>Visualizar</strong></a>
+        </li>
+      </ul>
+  </nav>
+</header>
+<main>
+  {{ content }}
+</main>
+<footer>
+  {% include footer.html %}
+</footer>

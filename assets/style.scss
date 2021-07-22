@@ -33,36 +33,6 @@
   }
 }
 
-.caaso {
-  --color: #a67e04;
-  --color-accent: #a67e0415;
-  &.dark,
-  .dark & {
-    --color: #fdd354;
-    --color-accent: #fdd3544f;
-  }
-}
-
-.federupa {
-  --color: #9f0000;
-  --color-accent: #9f000015;
-  &.dark,
-  .dark & {
-    --color: #d74045;
-    --color-accent: #d740454f;
-  }
-}
-
-.uniesquina {
-  --color: #28645f;
-  --color-accent: #28645f15;
-  &.dark,
-  .dark & {
-    --color: #8bddd1;
-    --color-accent: #8bddd14f;
-  }
-}
-
 /* MVP.css v1.7.4 - https://github.com/andybrewer/mvp */
 /* Modified by Gabriel Fontes where marked by comments, also converted to SCSS */
 

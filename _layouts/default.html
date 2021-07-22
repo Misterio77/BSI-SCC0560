@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }}</title>
+    <title>{% if page.shop-name %}{{ page.shop-name }} | {% endif %}{{ page.title }}</title>
     <link rel="canonical" href="https://cincobola.misterio.me{{ page.url }}" />
     <meta name="theme-color" content="#9c5763" />
     <meta
@@ -18,7 +18,7 @@
     <meta name="robots" content="noindex" />
     {% endif %}
     <!-- Pre carregar estilos, fonte, e scripts -->
-    <link rel="preload" href="/assets/styles/mvp.css" as="style" />
+    <link rel="preload" href="/assets/style.css" as="style" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       rel="preload"
@@ -26,16 +26,32 @@
       as="script"
     />
     <!-- Carregar estilo principal e fontes antes da pagina -->
-    <link rel="stylesheet" href="/assets/styles/mvp.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=block"
       rel="stylesheet"
     />
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <!-- Cores personalizadas por página, caso existam -->
+    <style>
+    {%- if page.color-dark -%}
+    :root {
+      --color: #{{ page.color-dark }};
+      --color-accent: #{{ page.color-dark }}15;
+    }
+    {%- endif -%}
+    {%- if page.color-light -%}
+    :root .dark {
+      --color: #{{ page.color-light }};
+      --color-accent: #{{ page.color-light }}4f;
+    }
+    {%- endif -%}
+    </style>
   </head>
-  <body class="{{- layout.colors -}}">
+  <body class="{{- page.shop-slug -}}">
     {{ content }}
     {% if page.inverted-nav-on-scroll -%}
+    <!-- Inverter cores da navegação depois de um certo ponto -->
     <script>
       var navbar = document.querySelectorAll("nav.fixed")[0];
       navbar.classList.remove("inverted");
@@ -50,6 +66,7 @@
     </script>
     {%- endif %}
     {% if page.show-logo-on-scroll -%}
+    <!-- Esconder logo da navegação até certo ponto -->
     <script>
       var logo = document.querySelectorAll("nav .logo")[0];
       logo.style.visibility = "hidden";

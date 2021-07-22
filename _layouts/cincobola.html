@@ -1,9 +1,35 @@
 ---
 layout: default
 title: Cinco Bola
+color-dark: #4d2364
+color-light: #b88bdd
 ---
+
 <header>
-  {% include nav/cincobola.html %}
+  <nav class="fixed">
+      <a href="/" class="logo">
+        {%- include logos/cincobola.svg class="logo-icon" -%}
+        <h1>Cinco Bola</h1>
+      </a>
+    <ul>
+      <li>
+        <a
+          {% if page.url == "/shops/" %} aria-current="page" href="#"
+          {% else %} href="/shops"
+          {% endif %}>
+          <em>Lojas</em>
+        </a>
+      </li>
+      <li>
+        <a
+          {% if page.url == "/console/" %} aria-current="page" href="#"
+          {% else %} href="/login"
+          {% endif %}>
+          <strong>Console</strong>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </header>
 <main>
   {{ content }}
