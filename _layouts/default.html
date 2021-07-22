@@ -36,14 +36,14 @@
     <style>
     {%- if page.color-dark -%}
     :root {
-      --color: #{{ page.color-dark }};
-      --color-accent: #{{ page.color-dark }}15;
+      --color-dark: #{{ page.color-dark }};
+      --color-dark-accent: #{{ page.color-dark }}15;
     }
     {%- endif -%}
     {%- if page.color-light -%}
     :root .dark {
-      --color: #{{ page.color-light }};
-      --color-accent: #{{ page.color-light }}4f;
+      --color-light: #{{ page.color-light }};
+      --color-light-accent: #{{ page.color-light }}4f;
     }
     {%- endif -%}
     </style>

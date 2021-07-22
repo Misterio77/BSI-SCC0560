@@ -15,9 +15,28 @@ defaults:
       path: ""
     values:
       inverted-nav-on-scroll: 100
+      shop-name: "Cinco Bola"
   -
     scope:
       path: "README.md"
     values:
       permalink: "README"
       layout: cincobola
+  -
+    scope:
+      path: "shops/caaso"
+    values:
+      shop-slug: caaso
+      shop-name: Loja CAASO
+      color-dark: a67e04
+      color-light: fdd354
+  -
+    scope:
+      path: "shops/ufscar"
+    values:
+      shop-slug: ufscar
+      shop-name: Loja Atlética UFSCAR
+      color-dark: a67e04
+      color-light: fdd354
+
+

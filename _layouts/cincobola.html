@@ -7,14 +7,14 @@ color-light: #b88bdd
 
 <header>
   <nav class="fixed">
-      <a href="/" class="logo">
+      <a href="/" class="logo" aria-label="Cinco Bola">
         {%- include logos/cincobola.svg class="logo-icon" -%}
         <h1>Cinco Bola</h1>
       </a>
     <ul>
       <li>
         <a
-          {% if page.url == "/shops/" %} aria-current="page" href="#"
+          {% if page.url == "/shops/" %} aria-current="page"
           {% else %} href="/shops"
           {% endif %}>
           <em>Lojas</em>
@@ -22,7 +22,7 @@ color-light: #b88bdd
       </li>
       <li>
         <a
-          {% if page.url == "/console/" %} aria-current="page" href="#"
+          {% if page.url == "/console/" %} aria-current="page"
           {% else %} href="/login"
           {% endif %}>
           <strong>Console</strong>

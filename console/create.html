@@ -1,10 +1,10 @@
 ---
 layout: cincobola
-title: Cinco Bola | Criar loja
+title: Criar loja
 ---
 
 <section>
-  <form method="get" action="/console/caaso">
+  <form method="get" action="/console">
     <header><h1>Crie uma nova loja</h1></header>
 
     <label for="name">Nome: </label>
@@ -12,8 +12,7 @@ title: Cinco Bola | Criar loja
     <input
       type="text"
       inputmode="text"
-      name="text"
-      id="text"
+      name="name"
       placeholder="Atlética Uniesquina ⚽"
     />
 
@@ -23,10 +22,10 @@ title: Cinco Bola | Criar loja
       type="text"
       inputmode="text"
       name="slug"
-      id="slug"
       placeholder="atletica-uniesquina"
       pattern="[a-z\-]+"
     />
+    <a onclick="resetSlug()" class="use-name" hidden>Usar nome</a>
 
     <hr />
 
@@ -34,8 +33,7 @@ title: Cinco Bola | Criar loja
       <div>
         <label for="dark-color">Cor escura: </label>
         <small>Bom contraste com branco</small>
-        <input type="color" name="dark-color" id="dark-color" value="#28645f" />
-        <button class="dark-preview" type="button" style="background: #eee; border-color: #eee; color: #28645f">Exemplo</button>
+        <input type="color" name="dark-color" value="#28645f" />
       </div>
 
       <div>
@@ -44,18 +42,19 @@ title: Cinco Bola | Criar loja
         <input
           type="color"
           name="light-color"
-          id="light-color"
           value="#8bddd1"
         />
-        <button class="light-preview" type="button" style="background: #222; border-color: #222; color: #8bddd1">Exemplo</button>
       </div>
     </div>
+    <small>
+      <p>Você pode testar as cores nesta página <br />(experimente o ícone no rodapé)</p>
+    </small>
 
     <hr />
 
     <label for="logo">Logo: </label>
     <small>Seu logo, em SVG</small>
-    <input type="file" name="logo" id="logo" accept="image/svg+xml" />
+    <input type="file" name="logo" accept="image/svg+xml" />
 
     <button type="submit">Criar</button>
   </form>
@@ -63,13 +62,52 @@ title: Cinco Bola | Criar loja
 <script>
   var darkInput = document.querySelector("input[name='dark-color']");
   var lightInput = document.querySelector("input[name='light-color']");
+  var nameInput = document.querySelector("input[name='name']");
+  var slugInput = document.querySelector("input[name='slug']");
+  var useNameLink = document.querySelector(".use-name");
+
+  slugHasBeenTouched = false;
 
   darkInput.addEventListener("input", function() {
-      document.querySelector(".dark-preview").style['color'] = darkInput.value;
+      document.documentElement.style.setProperty('--color-dark', darkInput.value);
   });
   lightInput.addEventListener("input", function() {
-      document.querySelector(".light-preview").style['color'] = lightInput.value;
+      document.documentElement.style.setProperty('--color-light', lightInput.value);
   });
-  console.log(darkInput);
-  console.log(lightInput);
+  nameInput.addEventListener("input", function() {
+      document.querySelectorAll("nav h1").forEach(function(x) {
+        x.innerHTML = nameInput.value;
+      });
+      if (!slugHasBeenTouched) {
+        slugInput.value = slugify(nameInput.value);
+      }
+  });
+  slugInput.addEventListener("input", function() {
+      useNameLink.hidden = false;
+      slugHasBeenTouched = true;
+  });
+
+  function resetSlug() {
+    useNameLink.hidden = true;
+    slugHasBeenTouched = false;
+    slugInput.value = slugify(nameInput.value);
+  }
+  // https://gist.github.com/codeguy/6684588
+  function slugify (str) {
+      str = str.replace(/^\s+|\s+$/g, ''); // trim
+      str = str.toLowerCase();
+    
+      // remove accents, swap ñ for n, etc
+      var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
+      var to   = "aaaaeeeeiiiioooouuuunc------";
+      for (var i=0, l=from.length ; i<l ; i++) {
+          str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+      }
+
+      str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+          .replace(/\s+/g, '-') // collapse whitespace and replace by -
+          .replace(/-+/g, '-'); // collapse dashes
+
+      return str;
+  }
 </script>
