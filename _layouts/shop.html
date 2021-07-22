@@ -5,26 +5,32 @@ layout: default
 <header>
   <nav class="fixed">
     <a href="/shops/{{ page.shop-slug }}" class="logo" aria-label="{{ page.shop-name }}">
-        {% if page.shop-slug %}{%- include logos/{{ page.shop-slug }}.svg class="logo-icon" -%}{% endif %}
-        <h1>{{ page.shop-name }}</h1>
-      </a>
-      <ul>
-        <li>
-          <a href="/shops/{{ page.shop-slug }}/cart" aria-label="Carrinho"><b>
-            <span class="iconify nav-icon" data-icon="mdi:cart"></span>
-            </b></a>
-        </li>
-        <li>
-          <a href="/shops/{{ page.shop-slug }}/profile" aria-label="Perfil"><i>
-            <span class="iconify nav-icon" data-icon="mdi:account"></span>
-          </i></a>
-        </li>
-      </ul>
+      {% if page.shop-slug %}{%- include logos/{{ page.shop-slug }}.svg
+      class="logo-icon" -%}{% endif %}
+      <h1>{{ page.shop-name }}</h1>
+    </a>
+    <!--
+      TODO - pesquisa
+      <input
+        type="search"
+        input="search"
+        name="search"
+        id="search"
+        />
+    -->
+    <ul>
+      <li>
+        <a href="/shops/{{ page.shop-slug }}/cart" aria-label="Carrinho">
+          <b><span class="iconify nav-icon" data-icon="mdi:cart"></span></b>
+        </a>
+      </li>
+      <li>
+        <a href="/shops/{{ page.shop-slug }}/profile" aria-label="Perfil">
+          <i><span class="iconify nav-icon" data-icon="mdi:account"></span></i>
+        </a>
+      </li>
+    </ul>
   </nav>
 </header>
-<main>
-  {{ content }}
-</main>
-<footer>
-  {% include footer.html %}
-</footer>
+<main>{{ content }}</main>
+<footer>{% include footer.html %}</footer>
