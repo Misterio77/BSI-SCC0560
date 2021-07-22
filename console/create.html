@@ -75,7 +75,7 @@ title: Criar loja
       document.documentElement.style.setProperty('--color-light', lightInput.value);
   });
   nameInput.addEventListener("input", function() {
-      document.querySelectorAll("nav h2").forEach(function(x) {
+      document.querySelectorAll("nav h1, nav h2").forEach(function(x) {
         x.innerHTML = nameInput.value;
       });
       if (!slugHasBeenTouched) {
@@ -105,6 +105,8 @@ title: Criar loja
       }
 
       str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+          .replace(/\s+$/g, '') // remove trailing spaces
+          .replace(/\A\s+/g, '') // remove leading spaces
           .replace(/\s+/g, '-') // collapse whitespace and replace by -
           .replace(/-+/g, '-'); // collapse dashes
 
