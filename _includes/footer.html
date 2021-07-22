@@ -8,16 +8,16 @@
   <ul>
     <li>
       <a
-        {% if page.url == "/shops/" %} aria-current="page"
-        {% else %} href="/shops"
-        {% endif %}
+        {%- if page.url == "/shops/" %} aria-current="page"
+        {%- else %} href="/shops"
+        {%- endif %}
       >Lojas</a>
     </li>
     <li>
       <a
-        {% if page.url == "/console/" %} aria-current="page"
-        {% else %} href="/login"
-        {% endif %}
+        {%- if page.url == "/console/" %} aria-current="page"
+        {%- else %} href="/login"
+        {%- endif %}
       >Console</a>
     </li>
     <li>

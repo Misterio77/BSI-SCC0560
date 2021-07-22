@@ -50,7 +50,7 @@
   </head>
   <body class="{{- page.shop-slug -}}">
     {{ content }}
-    {% if page.inverted-nav-on-scroll -%}
+    {%- if page.inverted-nav-on-scroll -%}
     <!-- Inverter cores da navegação depois de um certo ponto -->
     <script>
       var navbar = document.querySelectorAll("nav.fixed")[0];
@@ -79,6 +79,6 @@
       }
       window.addEventListener("scroll", showLogoOnScroll);
     </script>
-    {%- endif %}
+    {%- endif -%}
   </body>
 </html>
