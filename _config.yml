@@ -36,7 +36,7 @@ defaults:
     values:
       shop-slug: ufscar
       shop-name: Loja Atlética UFSCAR
-      color-dark: a67e04
-      color-light: fdd354
+      color-dark: 9f0000
+      color-light: d74045
 
 

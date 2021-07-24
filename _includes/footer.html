@@ -1,34 +1,36 @@
 <nav>
   <small>
-  <a href="/" class="logo" aria-label="Cinco Bola">
-    {%- include logos/cincobola.svg class="logo-icon" -%}
-    <h2>Cinco Bola</h2>
-  </a>
+    <a href="/" class="logo" aria-label="Cinco Bola">
+      {%- include logos/cincobola.svg class="logo-icon" -%}
+      <h2>Cinco Bola</h2>
+    </a>
   </small>
   <ul>
     <li>
-      <a
-        {%- if page.url == "/shops/" %} aria-current="page"
-        {%- else %} href="/shops"
-        {%- endif %}
-      >Lojas</a>
+      <a {% if page.url == "/shops/" %} aria-current="page" {% else %} href="/shops" {% endif %} >Lojas </a>
     </li>
     <li>
-      <a
-        {%- if page.url == "/console/" %} aria-current="page"
-        {%- else %} href="/login"
-        {%- endif %}
-      >Console</a>
+      <a {% if page.url == "/console/" %} aria-current="page" {% else %} href="/login" {% endif %} >Console </a>
     </li>
     <li>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Contato</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" >Contato </a>
     </li>
   </ul>
   <div>
-    <a class="reset-scheme" onclick="resetScheme()" style="visibility: hidden;" aria-label="Redefinir tema">
+    <a
+      class="reset-scheme"
+      onclick="resetScheme()"
+      style="visibility: hidden"
+      aria-label="Redefinir tema"
+    >
       <span class="iconify nav-icon" data-icon="mdi:restore"></span>
     </a>
-    <a class="dark-scheme" onclick="toggleScheme()" aria-label="Alternar tema" hidden>
+    <a
+      class="dark-scheme"
+      onclick="toggleScheme()"
+      aria-label="Alternar tema"
+      hidden
+    >
       <span class="iconify nav-icon" data-icon="mdi:weather-night"></span>
     </a>
     <a class="light-scheme" onclick="toggleScheme()" aria-label="Alternar tema">
@@ -37,9 +39,9 @@
   </div>
 </nav>
 <nav>
-<small>
-  <p>© oi do boa noite da Helen</p>
-</small>
+  <small>
+    <p>© oi do boa noite da Helen</p>
+  </small>
 </nav>
 <script>
   // Alterna o local storage e atualiza o tema
@@ -61,30 +63,32 @@
   // de acordo com a preferência
   function updateScheme() {
     if (localStorage.getItem("preferred-scheme") == "dark") {
-        document.body.classList.add("dark");
-        document.querySelector(".reset-scheme").style.visibility = "visible";
-        document.querySelector(".light-scheme").hidden = true;
-        document.querySelector(".dark-scheme").hidden = false;
+      document.body.classList.add("dark");
+      document.querySelector(".reset-scheme").style.visibility = "visible";
+      document.querySelector(".light-scheme").hidden = true;
+      document.querySelector(".dark-scheme").hidden = false;
     } else if (localStorage.getItem("preferred-scheme") == "light") {
-        document.body.classList.remove("dark");
-        document.querySelector(".reset-scheme").style.visibility = "visible";
-        document.querySelector(".light-scheme").hidden = false;
-        document.querySelector(".dark-scheme").hidden = true;
+      document.body.classList.remove("dark");
+      document.querySelector(".reset-scheme").style.visibility = "visible";
+      document.querySelector(".light-scheme").hidden = false;
+      document.querySelector(".dark-scheme").hidden = true;
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        document.body.classList.add("dark");
-        document.querySelector(".reset-scheme").style.visibility = "hidden";
-        document.querySelector(".light-scheme").hidden = true;
-        document.querySelector(".dark-scheme").hidden = false;
+      document.body.classList.add("dark");
+      document.querySelector(".reset-scheme").style.visibility = "hidden";
+      document.querySelector(".light-scheme").hidden = true;
+      document.querySelector(".dark-scheme").hidden = false;
     } else {
-        document.body.classList.remove("dark");
-        document.querySelector(".reset-scheme").style.visibility = "hidden";
-        document.querySelector(".light-scheme").hidden = false;
-        document.querySelector(".dark-scheme").hidden = true;
+      document.body.classList.remove("dark");
+      document.querySelector(".reset-scheme").style.visibility = "hidden";
+      document.querySelector(".light-scheme").hidden = false;
+      document.querySelector(".dark-scheme").hidden = true;
     }
   }
 
-  // Troca inicial de tema 
+  // Troca inicial de tema
   updateScheme();
   // Adicionar listener pra reagir a mudanças
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", updateScheme);
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", updateScheme);
 </script>
