@@ -24,7 +24,7 @@ defaults:
       layout: cincobola
   -
     scope:
-      path: "shops/caaso"
+      path: "*/caaso"
     values:
       shop-slug: caaso
       shop-name: Loja CAASO
@@ -32,7 +32,7 @@ defaults:
       color-light: fdd354
   -
     scope:
-      path: "shops/ufscar"
+      path: "*/ufscar"
     values:
       shop-slug: ufscar
       shop-name: Loja Atlética UFSCAR
