@@ -738,14 +738,11 @@ a[aria-current] {
   position: relative;
 }
 
-/*
 [aria-label]:after {
   content: attr(aria-label);
   display: none;
 
   position: absolute;
-  top: 110%;
-  left: 10px;
   z-index: 100;
   pointer-events: none;
   white-space: nowrap;
@@ -763,7 +760,6 @@ a[aria-current] {
 [aria-label]:hover:after, [aria-label]:focus:after {
   display: block;
 }
-*/
 
 html {
   scroll-padding-top: 100px; /* height of sticky header */
