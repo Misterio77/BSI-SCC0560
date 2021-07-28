@@ -739,6 +739,11 @@ a[aria-current] {
   .price {
     font-size: 1.3em;
   }
+  figure img {
+    @media (max-width: 876px) {
+      max-width: 340px;
+    }
+  }
 }
 
 html {
