@@ -608,14 +608,16 @@ nav {
 
     svg {
       margin-right: 0.2em;
+      font-size: 2.2em;
+    }
+    small {
+      color: inherit;
+      margin-left: 0.4em;
     }
 
-    h1 {
-      font-size: 1.8em;
-      margin-right: 0.4em;
-    }
-    @media (max-width: 620px) {
-      h1, h2 {
+    font-size: 1.6em;
+    @media (max-width: 550px) {
+      .title {
         display: none;
       }
     }
@@ -716,7 +718,7 @@ a[aria-current] {
 
 /* Icon sizes */
 .nav-icon {
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 .card-icon {
   font-size: 2.5em;
@@ -738,6 +740,7 @@ a[aria-current] {
   position: relative;
 }
 
+/*
 [aria-label]:after {
   content: attr(aria-label);
   display: none;
@@ -760,6 +763,7 @@ a[aria-current] {
 [aria-label]:hover:after, [aria-label]:focus:after {
   display: block;
 }
+*/
 
 html {
   scroll-padding-top: 100px; /* height of sticky header */

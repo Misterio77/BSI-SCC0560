@@ -1,9 +1,9 @@
 <nav>
   <small>
-    <a href="/" class="logo" aria-label="Cinco Bola">
-      {%- include logos/cincobola.svg class="logo-icon" -%}
-      <h2>Cinco Bola</h2>
-    </a>
+  <a href="/" class="logo">
+    {%- include logos/cincobola.svg -%}
+    <span class="title">Cinco Bola</span>
+  </a>
   </small>
   <ul>
     <li>
@@ -22,6 +22,7 @@
       onclick="resetScheme()"
       style="visibility: hidden"
       aria-label="Redefinir tema"
+      title="Redefinir tema"
     >
       <span class="iconify nav-icon" data-icon="mdi:restore"></span>
     </a>
@@ -29,6 +30,7 @@
       class="dark-scheme"
       onclick="toggleScheme()"
       aria-label="Alternar tema"
+      title="Alternar tema"
       hidden
     >
       <span class="iconify nav-icon" data-icon="mdi:weather-night"></span>

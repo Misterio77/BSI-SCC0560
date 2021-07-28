@@ -5,7 +5,7 @@ title: Criar loja
 
 <section>
   <form method="get" action="/console">
-    <header><h2>Crie uma nova loja</h2></header>
+    <header><h1>Crie uma nova loja</h1></header>
 
     <label for="name">Nome: </label>
     <small>Pode ter espaços, símbolos, o que quiser</small>
@@ -75,7 +75,7 @@ title: Criar loja
       document.documentElement.style.setProperty('--color-light', lightInput.value);
   });
   nameInput.addEventListener("input", function() {
-      document.querySelectorAll("nav h1, nav h2").forEach(function(x) {
+      document.querySelectorAll("nav .logo .title").forEach(function(x) {
         x.innerHTML = nameInput.value;
       });
       if (!slugHasBeenTouched) {
