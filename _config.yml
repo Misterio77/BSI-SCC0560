@@ -27,7 +27,7 @@ defaults:
       path: "*/caaso"
     values:
       shop-slug: caaso
-      shop-name: Loja CAASO
+      shop-name: CAASO
       color-dark: a67e04
       color-light: fdd354
   -
@@ -35,7 +35,7 @@ defaults:
       path: "*/ufscar"
     values:
       shop-slug: ufscar
-      shop-name: Loja Atlética UFSCAR
+      shop-name: Atlética UFSCAR
       color-dark: 9f0000
       color-light: d74045
 

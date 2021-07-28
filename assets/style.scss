@@ -1,5 +1,6 @@
 ---
 ---
+
 :root {
   --color-dark: #4d2364;
   --color-light: #b88bdd;
@@ -89,13 +90,10 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: var(--justify-important);
-
-  img {
-    max-width: 100%;
-  }
 }
 
-article img {
+article img,
+section img {
   max-width: 100%;
 }
 
@@ -127,15 +125,10 @@ section {
         }
       }
     }
-    &.product {
-      width: 80%;
-      img {
-        width: 250px;
-        height: 250px;
-        border-radius: var(--border-radius);
-        box-shadow: var(--box-shadow) var(--color-shadow);
-        object-fit: cover;
-      }
+    img {
+      width: 285px;
+      height: 285px;
+      object-fit: cover;
     }
   }
 }
@@ -223,7 +216,6 @@ a {
     filter: brightness(var(--hover-brightness));
     text-decoration-line: underline;
   }
-
 }
 a b,
 a em,
@@ -357,7 +349,6 @@ sup {
   top: -2px;
 }
 
-
 article aside a {
   color: var(--color-dark);
   .dark & {
@@ -369,6 +360,10 @@ figure {
   margin: 0;
   padding: 0;
 
+  img {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow) var(--color-shadow);
+  }
   figcaption {
     color: var(--color-text-secondary);
   }
@@ -538,7 +533,8 @@ nav {
   font-weight: bold;
   justify-content: space-between;
 
-  ul {
+  ul,
+  ol {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -703,7 +699,6 @@ nav {
         }
       }
     }
-
   }
 }
 a[aria-current] {
@@ -736,34 +731,15 @@ a[aria-current] {
   font-size: 14em;
 }
 
-[aria-label] {
-  position: relative;
+.product {
+  justify-content: space-around;
+  h1 {
+    font-size: 1.5em;
+  }
+  .price {
+    font-size: 1.3em;
+  }
 }
-
-/*
-[aria-label]:after {
-  content: attr(aria-label);
-  display: none;
-
-  position: absolute;
-  z-index: 100;
-  pointer-events: none;
-  white-space: nowrap;
-
-  font-size: 16px;
-  font-weight: normal;
-  padding: 0.5em 0.8em;
-  border-radius: 2px;
-
-  background-color: var(--color-bg);
-  box-shadow: var(--box-shadow) var(--color-shadow);
-  color: var(--color-text);
-}
-
-[aria-label]:hover:after, [aria-label]:focus:after {
-  display: block;
-}
-*/
 
 html {
   scroll-padding-top: 100px; /* height of sticky header */

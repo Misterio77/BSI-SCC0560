@@ -1,16 +1,16 @@
 <nav>
   <small>
-  <a href="/" class="logo">
-    {%- include logos/cincobola.svg -%}
-    <span class="title">Cinco Bola</span>
-  </a>
+    <a href="/" class="logo">
+      {%- include logos/cincobola.svg -%}
+      <span class="title">Cinco Bola</span>
+    </a>
   </small>
   <ul>
     <li>
-      <a {% if page.url == "/shops/" %} aria-current="page" {% else %} href="/shops" {% endif %} >Lojas </a>
+      <a {% if page.url == "/shops/" %} aria-current="page" {% endif %} href="/shops" >Lojas </a>
     </li>
     <li>
-      <a {% if page.url == "/console/" %} aria-current="page" {% else %} href="/login" {% endif %} >Console </a>
+      <a {% if page.url == "/console/" %} aria-current="page" {% endif %} href="/login" >Console </a>
     </li>
     <li>
       <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" >Contato </a>
@@ -46,6 +46,11 @@
   </small>
 </nav>
 <script>
+  // Elementos
+  const resetSchemeButton = document.querySelector(".reset-scheme");
+  const lightSchemeButton = document.querySelector(".light-scheme");
+  const darkSchemeButton = document.querySelector(".dark-scheme");
+
   // Alterna o local storage e atualiza o tema
   function toggleScheme() {
     if (document.body.classList.contains("dark")) {
@@ -64,26 +69,37 @@
   // Atualiza a classe do body e seta a visibilidade do botão reset
   // de acordo com a preferência
   function updateScheme() {
-    if (localStorage.getItem("preferred-scheme") == "dark") {
-      document.body.classList.add("dark");
-      document.querySelector(".reset-scheme").style.visibility = "visible";
-      document.querySelector(".light-scheme").hidden = true;
-      document.querySelector(".dark-scheme").hidden = false;
-    } else if (localStorage.getItem("preferred-scheme") == "light") {
-      document.body.classList.remove("dark");
-      document.querySelector(".reset-scheme").style.visibility = "visible";
-      document.querySelector(".light-scheme").hidden = false;
-      document.querySelector(".dark-scheme").hidden = true;
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      document.body.classList.add("dark");
-      document.querySelector(".reset-scheme").style.visibility = "hidden";
-      document.querySelector(".light-scheme").hidden = true;
-      document.querySelector(".dark-scheme").hidden = false;
+    var dark = false;
+
+    // Verificar se tem uma preferência explicita já setada na localstorage
+    const explicit = localStorage.getItem("preferred-scheme");
+    // Se tiver
+    if (explicit) {
+      // true para dark, false para qqr outro
+      dark = (explicit == "dark");
+      // Mostrar o botão de reset
+      resetSchemeButton.style.visibility = "visible";
     } else {
+      // true para dark, false para light ou auto
+      dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      // Esconder o botão de reset
+      resetSchemeButton.style.visibility = "hidden";
+    }
+
+    // Caso seja decidido que é pra usar o escuro
+    if (dark) {
+      // Adicionar classe dark
+      document.body.classList.add("dark");
+      // Esconder botão de sol, mostrar botão de lua
+      lightSchemeButton.hidden = true;
+      darkSchemeButton.hidden = false;
+    // Caso contrário
+    } else {
+      // Remover classe dark
       document.body.classList.remove("dark");
-      document.querySelector(".reset-scheme").style.visibility = "hidden";
-      document.querySelector(".light-scheme").hidden = false;
-      document.querySelector(".dark-scheme").hidden = true;
+      // Esconder botão de lua, mostrar botão de sol
+      darkSchemeButton.hidden = true;
+      lightSchemeButton.hidden = false;
     }
   }
 

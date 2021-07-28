@@ -14,17 +14,15 @@ color-light: #b88bdd
     <ul>
       <li>
         <a
-          {% if page.url == "/shops/" %} aria-current="page"
-          {% else %} href="/shops"
-          {% endif %}>
+          {% if page.url == "/shops/" %} aria-current="page"{% endif %}
+          href="/shops">
           <em>Lojas</em>
         </a>
       </li>
       <li>
         <a
-          {% if page.url == "/console/" %} aria-current="page"
-          {% else %} href="/login"
-          {% endif %}>
+          {% if page.url == "/console/" %} aria-current="page"{% endif %}
+          href="/login">
           <strong>Console</strong>
         </a>
       </li>

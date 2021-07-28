@@ -3,18 +3,40 @@ layout: shop
 title: Camiseta
 ---
 
-<nav class="breadcrumb">
-  <ul>
+<header>
+<nav arialabel="breadcrumbs" class="breadcrumb">
+  <ol>
     <li><a href="/shops/caaso">Home</a></li>
     <li><a href="/shops/caaso#vestuario">Vestuário</a></li>
     <li><a href="#" aria-current="page">Camiseta</a></li>
-  </ul>
+  </ol>
 </nav>
+</header>
 
-<section>
-    <aside>
-      <img src="https://images-americanas.b2w.io/produtos/01/00/img/1505288/4/1505288441_1GG.jpg" />
-    </aside>
-    <aside>
-    </aside>
+<section class="product">
+  <figure>
+    <img
+      alt="Camiseta"
+      src="https://images-americanas.b2w.io/produtos/01/00/img/1505288/4/1505288441_1GG.jpg"
+    >
+  </figure>
+  <form method="get" action="/shops/caaso/cart">
+    <h1>Camiseta</h1>
+    <p class="price">R$ 19,20</p>
+    <hr />
+    <input type="hidden" id="product" name="produto" value="camiseta"/>
+    <label for="size">Tamanho:</label>
+    <select name="tamanho" id="size">
+      <option value="XS">PP</option>
+      <option value="S">P</option>
+      <option value="M" selected>M</option>
+      <option value="L">G</option>
+      <option value="L">GG</option>
+      <option value="XL">GG</option>
+      <option value="XXL">XGG</option>
+    </select>
+    <label for="amount">Unidades:</label>
+    <input type="number" name="unidades" id="amount" min="1" max="99" value="1"/>
+    <button type="submit">Adicionar ao carrinho</button>
+  </form>
 </section>
