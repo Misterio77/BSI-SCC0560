@@ -1,0 +1,115 @@
+---
+layout: shop
+title: Carrinho
+---
+
+<header>
+  <nav arialabel="breadcrumbs" class="breadcrumb">
+    <ol>
+      <li><a href="/shops/{{ page.shop.slug }}">Home</a></li>
+      <li>
+        <a href="/shops/{{ page.shop.slug }}/cart" aria-current="page"
+          >Carrinho</a
+        >
+      </li>
+    </ol>
+  </nav>
+</header>
+
+<section class="cart">
+  <header>
+    <h1>Carrinho</h1>
+  </header>
+
+  {% for product in page.products %}
+  <form method="get" action="#">
+    <figure>
+      <img alt="{{ product.name }}" src="{{ product.image }}" />
+      <figcaption>
+        <h2>{{ product.name }}</h2>
+        <p class="price">{{ product.price }}</p>
+        <p>{{ product.additional }}</p>
+      </figcaption>
+    </figure>
+    <div>
+      <label for="amount">Unidades:</label>
+      <input
+        type="number"
+        name="unidades"
+        id="amount"
+        value="1"
+        min="0"
+        max="{% if product.available %}{{product.available}}{% else %}99{% endif %}"
+      />
+    </div>
+    <button type="submit" class="update">
+      <span
+        class="iconify nav-icon"
+        data-icon="mdi:check"
+        aria-label="Atualizar quantidade"
+        title="Atualizar quantidade"
+      ></span>
+    </button>
+    <button type="submit" class="remove" hidden>
+      <span
+        class="iconify nav-icon"
+        data-icon="mdi:delete"
+        aria-label="Remover do carrinho"
+        title="Remover do carrinho"
+      ></span>
+    </button>
+  </form>
+  {% endfor %}
+</section>
+
+<hr />
+
+<section>
+  <form>
+    <h2>Calcular frete</h2>
+    <label for="cep">CEP:</label>
+    <input
+      type="text"
+      label="CEP"
+      placeholder="00000-000"
+      maxlength="9"
+      pattern="[0-9]{5}-[0-9]{3}"
+    />
+    <button>Calcular</button>
+  </form>
+
+  <form class="summary">
+    <div>
+      <h3>Subtotal</h3>
+      <p>R$ 38,40</p>
+    </div>
+    <div>
+      <h3>Frete</h3>
+      <p>R$ 12,00</p>
+    </div>
+    <hr />
+    <div>
+      <h3>Total</h3>
+      <p>R$ 50,40</p>
+    </div>
+    <hr />
+    <a href="/shops/{{ page.shop.slug }}"><strong>Voltar</strong> </a>
+    <a href="/shops/{{ page.shop.slug }}/payment"><strong>Finalizar</strong></a>
+  </form>
+</section>
+<script>
+  const amountFields = document.querySelectorAll("#amount");
+  amountFields.forEach((x) => {
+    x.addEventListener("change", (event) => {
+      const item = event.target.parentElement.parentElement;
+
+      if (event.target.value == 0) {
+        item.querySelector(".update").hidden = true;
+        item.querySelector(".remove").hidden = false;
+      } else {
+        item.querySelector(".remove").hidden = true;
+        item.querySelector(".update").hidden = false;
+      }
+    });
+  });
+</script>

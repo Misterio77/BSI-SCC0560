@@ -128,121 +128,9 @@ section {
     img {
       width: 285px;
       height: 285px;
-      object-fit: cover;
-    }
-    &.productCart {
-        width: 90%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-  
-        .imgCart {
-          width: 100px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        figcaption {
-          width: 50%;
-          h3 {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-          }
-        }
-        figure {
-          padding: 5px;
-          img {
-            width: 80px;
-            height: 100%;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow) var(--color-shadow);
-            object-fit: cover;
-          }
-        }
-        .tools {
-          width: 20%;
-          display: flex;
-          justify-content: flex-end;
-          a {
-            i {
-              padding: 0.3rem;
-            }
-          }
-        }
-      }
-      &.confirmCart {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-      }
     }
   }
-  
-  .quantidadeTool {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 88%;
-    div {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-    a {
-      i {
-        padding: .1rem;
-      }
-    }
-  }
-  
-  .totalBox {
-    display: flex;
-    flex-direction: column;
-    hr {
-      margin: 20px 0 0px 0;
-    }
-    div {
-      height: 2rem;
-      display: flex;
-      justify-content: space-between;
-    }
-    .finalCartActions {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin-top: 40px;
-      button {
-        margin-left: 20px;
-        font-size: 1rem;
-      }
-    }
-  }
-  
-  .freteBox {
-    display: flex;
-    align-items: center;
-    height: 24px;
-    margin-bottom: 20px;
-    input {
-      box-sizing: border-box;
-      background-color: rgba(white, 0);
-      margin: 0;
-      height: 32px;
-      color: var(--color-text);
-    }
-    a {
-      button {
-        box-sizing: border-box;
-        min-height: 0;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        position: relative;
-        left: -10px;
-      }
-    }
-  }
+}
 
 [hidden] {
   display: none;
@@ -264,7 +152,7 @@ header {
     strong {
       margin-left: 0.1rem;
       margin-right: 0.1rem;
-      @media (max-width: 620px) {
+      @media (max-width: 550px) {
         margin-left: 0.1rem;
         margin-right: 0.1rem;
       }
@@ -475,9 +363,6 @@ figure {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow) var(--color-shadow);
   }
-  figcaption {
-    color: var(--color-text-secondary);
-  }
 }
 
 button:disabled,
@@ -493,6 +378,7 @@ button[disabled]:hover {
 }
 
 form {
+  margin: 0.95rem;
   border: 2px solid var(--color-bg-secondary);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow) var(--color-shadow);
@@ -741,7 +627,7 @@ nav {
     top: 0;
     padding: 0 5%;
 
-    @media (max-width: 620px) {
+    @media (max-width: 550px) {
       width: 98%;
       padding: 0 1%;
     }
@@ -854,6 +740,52 @@ a[aria-current] {
     @media (max-width: 876px) {
       max-width: 340px;
     }
+  }
+}
+.cart {
+  form {
+    display: flex;
+    @media (max-width: 431px) {
+      display: block;
+    }
+    justify-content: space-between;
+    align-items: center;
+
+    width: 80%;
+    h2 {
+      font-size: 1.3em;
+    }
+    button {
+      padding: 0.4em 0.5em;
+    }
+    input#amount {
+      max-width: 50px;
+    }
+    figure {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        max-width: 150px;
+        @media (max-width: 620px) {
+          max-width: 70px;
+        }
+      }
+      figcaption {
+        margin-left: 2em;
+      }
+    }
+
+  }
+}
+
+.summary {
+  div {
+    height: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
