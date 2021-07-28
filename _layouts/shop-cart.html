@@ -23,14 +23,19 @@ title: Carrinho
 
   {% for product in page.products %}
   <form method="get" action="#">
-    <figure>
-      <img alt="{{ product.name }}" src="{{ product.image }}" />
-      <figcaption>
-        <h2>{{ product.name }}</h2>
-        <p class="price">{{ product.price }}</p>
-        <p>{{ product.additional }}</p>
-      </figcaption>
-    </figure>
+    <a
+      href="/shops/{{ page.shop.slug }}/products/{{ product.slug }}"
+      aria-label="{{ product.name }}"
+    >
+      <figure>
+        <img alt="{{ product.name }}" src="{{ product.image }}" />
+        <figcaption>
+          <h2>{{ product.name }}</h2>
+          <p class="price">{{ product.price }}</p>
+          <p>{{ product.additional }}</p>
+        </figcaption>
+      </figure>
+    </a>
     <div>
       <label for="amount">Unidades:</label>
       <input
