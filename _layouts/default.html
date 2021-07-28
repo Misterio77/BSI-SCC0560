@@ -34,16 +34,16 @@
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <!-- Cores personalizadas por página, caso existam -->
     <style>
-    {%- if page.color-dark -%}
+    {%- if page.colors.dark -%}
     :root {
-      --color-dark: #{{ page.color-dark }};
-      --color-dark-accent: #{{ page.color-dark }}15;
+      --color-dark: #{{ page.colors.dark }};
+      --color-dark-accent: #{{ page.colors.dark }}15;
     }
     {%- endif -%}
-    {%- if page.color-light -%}
+    {%- if page.colors.light -%}
     :root .dark {
-      --color-light: #{{ page.color-light }};
-      --color-light-accent: #{{ page.color-light }}4f;
+      --color-light: #{{ page.colors.light }};
+      --color-light-accent: #{{ page.colors.light }}4f;
     }
     {%- endif -%}
     </style>

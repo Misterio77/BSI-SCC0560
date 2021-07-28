@@ -1,0 +1,69 @@
+---
+layout: shop
+---
+
+<header>
+  <nav arialabel="breadcrumbs" class="breadcrumb">
+    <ol>
+      <li><a href="/shops/{{ page.shop.slug }}">Home</a></li>
+      <li>
+        <a href="/shops/{{ page.shop.slug }}#{{ page.product.category.slug }}"
+          >{{ page.product.category.name }}</a
+        >
+      </li>
+      <li><a href="#" aria-current="page">{{ page.product.name }}</a></li>
+    </ol>
+  </nav>
+</header>
+
+<section class="product">
+  <figure>
+    <img alt="{{ page.product.name }}" src="{{ page.product.image }}" />
+  </figure>
+  <form method="get" action="/shops/{{ page.shop.slug }}/cart">
+    <h1>{{ page.product.name }}</h1>
+    <p class="price">{{ page.product.price }}</p>
+    <hr />
+    <input
+      type="hidden"
+      id="product"
+      name="produto"
+      value="{{ page.product.slug }}"
+    />
+    {% if page.clothing-sizes %}
+    <label for="size">Tamanho:</label>
+    <select
+      name="tamanho"
+      id="size"
+      {% if page.product.available == 0 %}
+      disabled
+      {% endif %}
+    >
+      <option value="XS">PP</option>
+      <option value="S">P</option>
+      <option value="M" selected>M</option>
+      <option value="L">G</option>
+      <option value="L">GG</option>
+      <option value="XL">GG</option>
+      <option value="XXL">XGG</option>
+    </select>
+    {% endif %}
+    <label for="amount">Unidades:</label>
+    <input
+      type="number"
+      name="unidades"
+      id="amount"
+      value="1"
+      min="1"
+      max="{% if page.product.available %}{{page.product.available}}{% else %}99{% endif %}"
+      {% if page.product.available == 0 %}
+      disabled
+      {% endif %}
+    />
+    {% if page.product.available == 0 %}
+    <button type="submit" disabled>Indisponível</button>
+    {% else %}
+    <button type="submit">Adicionar ao carrinho</button>
+    {% endif %}
+  </form>
+</section>

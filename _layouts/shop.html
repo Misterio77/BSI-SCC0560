@@ -4,18 +4,18 @@ layout: default
 
 <header>
   <nav class="fixed">
-    <a href="/shops/{{ page.shop-slug }}" class="logo">
-      {% if page.shop-slug %}{%- include logos/{{ page.shop-slug }}.svg -%}{% endif %}
-      <span class="title">{{ page.shop-name }}</span>
+    <a href="/shops/{{ page.shop.slug }}" class="logo">
+      {% if page.shop.slug %}{%- include logos/{{ page.shop.slug }}.svg -%}{% endif %}
+      <span class="title">{{ page.shop.name }}</span>
     </a>
     <ul>
       <li>
-        <a href="/shops/{{ page.shop-slug }}/cart" aria-label="Carrinho" title="Carrinho">
+        <a href="/shops/{{ page.shop.slug }}/cart" aria-label="Carrinho" title="Carrinho">
           <b><span class="iconify nav-icon" data-icon="mdi:cart"></span></b>
         </a>
       </li>
       <li>
-        <a href="/shops/{{ page.shop-slug }}/profile" aria-label="Perfil" title="Carrinho">
+        <a href="/shops/{{ page.shop.slug }}/profile" aria-label="Perfil" title="Carrinho">
           <i><span class="iconify nav-icon" data-icon="mdi:account"></span></i>
         </a>
       </li>
