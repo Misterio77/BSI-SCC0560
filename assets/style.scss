@@ -131,118 +131,118 @@ section {
       object-fit: cover;
     }
     &.productCart {
-      width: 90%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-
-      .imgCart {
-        width: 100px;
+        width: 90%;
         display: flex;
-        flex-direction: column;
+        justify-content: space-around;
         align-items: center;
-      }
-      figcaption {
-        width: 50%;
-        h3 {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
+  
+        .imgCart {
+          width: 100px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
-      }
-      figure {
-        padding: 5px;
-        img {
-          width: 80px;
-          // height: 100px;
-          border-radius: var(--border-radius);
-          box-shadow: var(--box-shadow) var(--color-shadow);
-          object-fit: cover;
+        figcaption {
+          width: 50%;
+          h3 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
         }
-      }
-      .tools {
-        width: 20%;
-        display: flex;
-        justify-content: flex-end;
-        a {
-          i {
-            padding: 0.3rem;
+        figure {
+          padding: 5px;
+          img {
+            width: 80px;
+            // height: 100px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow) var(--color-shadow);
+            object-fit: cover;
+          }
+        }
+        .tools {
+          width: 20%;
+          display: flex;
+          justify-content: flex-end;
+          a {
+            i {
+              padding: 0.3rem;
+            }
           }
         }
       }
-    }
-    &.confirmCart {
-      width: 90%;
-      display: flex;
-      flex-direction: column;
+      &.confirmCart {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
-}
-
-.quantidadeTool {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 88%;
-  div {
-    width: 100%;
+  
+  .quantidadeTool {
     display: flex;
     justify-content: center;
-  }
-  a {
-    i {
-      padding: .1rem;
-    }
-  }
-}
-
-.totalBox {
-  display: flex;
-  flex-direction: column;
-  hr {
-    margin: 20px 0 0px 0;
-  }
-  div {
-    height: 2rem;
-    display: flex;
-    justify-content: space-between;
-  }
-  .finalCartActions {
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
-    margin-top: 40px;
-    button {
-      margin-left: 20px;
-      font-size: 1rem;
-    }
-  }
-}
-
-.freteBox {
-  display: flex;
-  align-items: center;
-  height: 24px;
-  margin-bottom: 20px;
-  input {
-    box-sizing: border-box;
-    background-color: rgba(white, 0);
-    margin: 0;
-    height: 32px;
-    color: var(--color-text);
-  }
-  a {
-    button {
-      box-sizing: border-box;
-      min-height: 0;
-      height: 32px;
+    width: 88%;
+    div {
+      width: 100%;
       display: flex;
-      align-items: center;
-      position: relative;
-      left: -10px;
+      justify-content: center;
+    }
+    a {
+      i {
+        padding: .1rem;
+      }
     }
   }
-}
+  
+  .totalBox {
+    display: flex;
+    flex-direction: column;
+    hr {
+      margin: 20px 0 0px 0;
+    }
+    div {
+      height: 2rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .finalCartActions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 40px;
+      button {
+        margin-left: 20px;
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .freteBox {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    margin-bottom: 20px;
+    input {
+      box-sizing: border-box;
+      background-color: rgba(white, 0);
+      margin: 0;
+      height: 32px;
+      color: var(--color-text);
+    }
+    a {
+      button {
+        box-sizing: border-box;
+        min-height: 0;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        left: -10px;
+      }
+    }
+  }
 
 [hidden] {
   display: none;
