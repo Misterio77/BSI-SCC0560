@@ -1,6 +1,6 @@
 ---
 ---
-# Cinco Bola
+# Cinco Bola (Grupo 6)
 O site pode ser visitado em [cincobola.misterio.me](https://cincobola.misterio.me)
 
 Nosso repositório está disponível em [github.com/misterio77/cincobola](https://github.com/misterio77/cincobola)
