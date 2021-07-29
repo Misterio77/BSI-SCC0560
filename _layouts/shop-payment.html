@@ -247,7 +247,6 @@ layout: shop
     document.querySelectorAll(".payment-method").forEach((x) => {
       x.removeAttribute("aria-current");
     });
-    document.querySelector(".payment-method." + method).ariaCurrent =
-      "location";
+    document.querySelector(".payment-method." + method).setAttribute("aria-current", "location");
   }
 </script>
