@@ -19,7 +19,7 @@ A maioria dos formulários tem verificações, caso algo seja digitado. No mundo
 
 
 ## Como compilar
-Você pode clonar o repositório, [baixar o jekyll](https://jekyllrb.com/docs/), e utilizar `jekyll build` (irá compilar os arquivos no diretório `_site`), ou usar `jekyll watch` para iniciar um servidorzinho local (daí só abrir seu navegador em `localhost:4000`).
+Você pode clonar o repositório, [baixar o jekyll](https://jekyllrb.com/docs/), e utilizar `jekyll build` (irá compilar os arquivos no diretório `_site`), ou usar `jekyll serve` para iniciar um servidorzinho local (daí só abrir seu navegador em `localhost:4000`).
 
 ## Sobre a estrutura
 A maioria do código das páginas está em `_layouts`, lá definimos como cada página se comporta, e fatoramos coisas em váriaveis de páginas (exemplo: lista de produtos do caaso, definidos em `shops/caaso/index.html`). Todos os layouts herdam o layout base `_layouts/default.html`, e existem alguns layouts comuns para cada área (loja, console, cincobola).
