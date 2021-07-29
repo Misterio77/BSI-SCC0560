@@ -86,7 +86,7 @@ title: Carrinho
     <button>Calcular</button>
   </form>
 
-  <aside class="summary">
+  <form method="get" action="/shops/{{ page.shop.slug }}/payment" class="summary">
     <div>
       <h3>Subtotal</h3>
       <p> {{ page.subtotal }}</p>
@@ -102,13 +102,14 @@ title: Carrinho
       <p class="with-shipping" hidden> {{ page.total }}</p>
     </div>
     <hr />
-    <a href="/shops/{{ page.shop.slug }}"><strong>Voltar</strong> </a>
-    <a href="/shops/{{ page.shop.slug }}/payment"><strong>Finalizar</strong></a>
+    <a href="/shops/{{ page.shop.slug }}"><em>Voltar</em></a>
+    <button class="purchase" disabled>Finalizar</button>
   </form>
 </section>
 <script>
   // Mostrar frete ao clicar calcular
   function showShipping() {
+    document.querySelector(".purchase").disabled = false;
     document.querySelector(".shipping").hidden = false;
     document.querySelector(".with-shipping").hidden = false;
     document.querySelector(".without-shipping").hidden = true;
