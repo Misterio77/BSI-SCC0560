@@ -103,6 +103,9 @@ title: Carrinho
       <p class="with-shipping" hidden>{{ page.total }}</p>
     </div>
     <hr />
+    <p>
+      <small class="shipping-warning">Calcule o frete antes de continuar</small>
+    </p>
     <a href="/shops/{{ page.shop.slug }}"><em>Voltar</em></a>
     <button class="purchase" disabled>Finalizar</button>
   </form>
@@ -111,6 +114,7 @@ title: Carrinho
   // Mostrar frete ao clicar calcular
   function showShipping() {
     document.querySelector(".purchase").disabled = false;
+    document.querySelector(".shipping-warning").hidden = true;
     document.querySelector(".shipping").hidden = false;
     document.querySelector(".with-shipping").hidden = false;
     document.querySelector(".without-shipping").hidden = true;

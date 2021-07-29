@@ -53,7 +53,7 @@ layout: shop
       form="finish"
       id="address-line-1"
       type="text"
-      placeholder="Rua xxxxxx, nro xx"
+      placeholder="Rua Falsa, nro 420"
     />
 
     <label for="address-line-2">Complemento</label>
@@ -61,7 +61,7 @@ layout: shop
       form="finish"
       id="address-line-2"
       type="text"
-      placeholder="Apto xx"
+      placeholder="Apto 123"
     />
 
     <label for="city">Cidade</label>
@@ -248,6 +248,8 @@ layout: shop
 
   <form id="finish" method="get" action="/shops/{{ page.shop.slug }}">
     <header>
+      <h2>Total</h2>
+      <p><strong>{{ page.total-value }}</strong></p>
       <button>Finalizar compra</button>
     </header>
   </form>
