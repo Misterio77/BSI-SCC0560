@@ -107,8 +107,9 @@ section {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow) var(--color-shadow);
     margin: 0.95rem;
-    padding: 1.25rem;
-    width: var(--width-card);
+    padding: 1.5rem;
+    min-width: var(--width-card);
+    max-width: var(--width-card-wide);
 
     /* Invert colors on full cards */
     &.inverted {

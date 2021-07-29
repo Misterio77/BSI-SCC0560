@@ -72,12 +72,13 @@ title: Carrinho
 <hr />
 
 <section>
-  <form>
+  <form onsubmit="showShipping();return false">
     <h2>Calcular frete</h2>
     <label for="cep">CEP:</label>
     <input
       id="cep"
-      type="number"
+      type="text"
+      inputmode="numeric"
       label="CEP"
       placeholder="12345678"
       maxlength="8"
@@ -86,19 +87,20 @@ title: Carrinho
     <button>Calcular</button>
   </form>
 
-  <form class="summary">
+  <aside class="summary">
     <div>
       <h3>Subtotal</h3>
-      <p>R$ 38,40</p>
+      <p>R$ 34,30</p>
     </div>
     <div>
       <h3>Frete</h3>
-      <p>R$ 12,00</p>
+      <p class="shipping" hidden>R$ 12,00</p>
     </div>
     <hr />
     <div>
       <h3>Total</h3>
-      <p>R$ 50,40</p>
+      <p class="without-shipping">R$ 34,30</p>
+      <p class="with-shipping" hidden>R$ 46,30</p>
     </div>
     <hr />
     <a href="/shops/{{ page.shop.slug }}"><strong>Voltar</strong> </a>
@@ -106,6 +108,13 @@ title: Carrinho
   </form>
 </section>
 <script>
+  // Mostrar frete ao clicar calcular
+  function showShipping() {
+    document.querySelector(".shipping").hidden = false;
+    document.querySelector(".with-shipping").hidden = false;
+    document.querySelector(".without-shipping").hidden = true;
+  }
+  // Mostrar icone de lixeira caso unidades = 0
   const amountFields = document.querySelectorAll(".amount");
   amountFields.forEach((x) => {
     x.addEventListener("change", (event) => {
