@@ -31,7 +31,7 @@ defaults:
         slug: caaso
         name: CAASO
       colors:
-        dark: 8c6900
+        dark: 775900
         light: fdd354
   -
     scope:
