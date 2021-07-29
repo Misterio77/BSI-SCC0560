@@ -4,9 +4,23 @@ layout: cincobola
 inverted-nav-on-scroll: 200
 show-logo-on-scroll: 200
 ---
+
 <header>
-  {%- include logos/cincobola.svg class="splash-icon" -%}
-  <h1>Cinco Bola</h1>
+  <div class="normal">
+    <a onclick="easterEgg()" href="#">
+      {%- include logos/cincobola.svg class="splash-icon" -%}
+    </a>
+    <h1>Cinco Bola</h1>
+  </div>
+
+  <div class="secret" hidden>
+    <a onclick="revertEasterEgg()" href="#">
+      <span class="iconify splash-icon" data-icon="whh:onion"></span>
+    </a>
+    <h1>Cebola</h1>
+  </div>
+
+
   <p>Descomplicando o ecommerce universitário</p>
   <a href="/register"><strong>Crie sua loja</strong></a>
 </header>
@@ -21,9 +35,7 @@ show-logo-on-scroll: 200
   <aside>
     <span class="iconify card-icon" data-icon="mdi:finance"></span>
     <h3>Métricas</h3>
-    <p>
-      Tenha relatórios detalhados de estoque, compras, e logísticas.
-    </p>
+    <p>Tenha relatórios detalhados de estoque, compras, e logísticas.</p>
   </aside>
   <aside>
     <span class="iconify card-icon" data-icon="mdi:sale"></span>
@@ -33,7 +45,10 @@ show-logo-on-scroll: 200
   <aside>
     <span class="iconify card-icon" data-icon="mdi:eye-off"></span>
     <h3>Sem cadastro</h3>
-    <p>Nenhum universitário quer lidar com cadastros intermináveis. Toda a comunicação é feita por email.</p>
+    <p>
+      Nenhum universitário quer lidar com cadastros intermináveis. Toda a
+      comunicação é feita por email.
+    </p>
   </aside>
   <aside>
     <span class="iconify card-icon" data-icon="mdi:bank-check"></span>
@@ -47,7 +62,23 @@ show-logo-on-scroll: 200
     <span class="iconify card-icon" data-icon="mdi:palette-swatch"></span>
     <h3>Personalizável</h3>
     <p>
-      Exalte sua identidade visual. Toda sua loja segue a cor e logo da sua organização.
+      Exalte sua identidade visual. Toda sua loja segue a cor e logo da sua
+      organização.
     </p>
   </aside>
 </section>
+<script>
+  var cont = 0;
+  function easterEgg() {
+    cont += 1;
+    if (cont == 9) {
+      document.querySelector(".normal").hidden = true;
+      document.querySelector(".secret").hidden = false;
+      cont = 0;
+    }
+  }
+  function revertEasterEgg() {
+    document.querySelector(".normal").hidden = false;
+    document.querySelector(".secret").hidden = true;
+  }
+</script>
