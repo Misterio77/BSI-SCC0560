@@ -697,7 +697,8 @@ nav {
     }
   }
 }
-a[aria-current] {
+a[aria-current],
+button[aria-current] {
   pointer-events: none;
   cursor: default;
   filter: brightness(0.8);

@@ -103,7 +103,7 @@ layout: shop
       <h2>Forma de Pagamento</h2>
     </header>
 
-    <a
+    <button
       aria-current="location"
       class="payment-method cc"
       aria-label="Cartão de Crédito"
@@ -116,9 +116,9 @@ layout: shop
           data-icon="mdi:credit-card-outline"
         ></span>
       </strong>
-    </a>
+    </button>
 
-    <a
+    <button
       class="payment-method boleto"
       aria-label="Boleto Bancário"
       title="Boleto Bancário"
@@ -127,9 +127,9 @@ layout: shop
       <strong>
         <span class="iconify nav-icon" data-icon="mdi:barcode-scan"></span>
       </strong>
-    </a>
+    </button>
 
-    <a
+    <button
       class="payment-method pix"
       aria-label="Pix"
       title="Pix"
@@ -138,18 +138,16 @@ layout: shop
       <strong>
         <span class="iconify nav-icon" data-icon="mdi:bank-transfer-in"></span>
       </strong>
-    </a>
+    </button>
 
-    <a
+    <button
       class="payment-method ether"
       aria-label="Ether"
       title="Ether"
       onclick="showMethod('ether')"
     >
-      <strong>
-        <span class="iconify nav-icon" data-icon="mdi:ethereum"></span>
-      </strong>
-    </a>
+      <span class="iconify nav-icon" data-icon="mdi:ethereum"></span>
+    </button>
 
     <hr />
 
