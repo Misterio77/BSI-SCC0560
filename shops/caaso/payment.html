@@ -1,0 +1,238 @@
+---
+layout: shop
+title: Endereço e Pagamento
+---
+
+<header>
+    <nav arialabel="breadcrumbs" class="breadcrumb">
+        <ol>
+            <li><a href="/shops/{{ page.shop.slug }}">Home</a></li>
+            <li>
+                <a href="/shops/{{ page.shop.slug }}/cart">Carrinho</a>
+            </li>
+            <li>
+                <a href="/shops/{{ page.shop.slug }}/payment" aria-current="page">
+                    Endereço e Pagamento</a>
+            </li>
+        </ol>
+    </nav>
+</header>
+
+<section id="endereço">
+    <header>
+        <h2>Endereço de Entrega</h2>
+    </header>
+
+    <aside id="infoEndereco" class="enderecoInfo">
+        <span>
+            <h3>Destinatário: </h3>
+            <h4>Jucicleide Nascimento da Silva</h4>
+        </span>
+        <span>
+            <h3>Telefone: </h3>
+            <h4>(xx)xxxxx-xxxx</h4>
+        </span>
+        <span>
+            <h3>Cep: </h3>
+            <h4>00000-000</h4>
+        </span>
+        <span>
+            <h3>Endereço: </h3>
+            <h4>Rua concreto, 0000, Jd. Barro, São Borja, PS</h4>
+        </span>
+        <div class="finalCartActions">
+                <button
+                    aria-label="Modificar endereço e contato"
+                    onclick="editEndereco()"
+                >
+                    Editar
+                </button>
+        </div>
+    </aside>
+
+    <aside id="editEndereco" class="enderecoEdit" hidden>
+        <div>
+            <div class="inputBox">
+                <h3>Nome</h3>
+                <input type="text" label="Nome" placeholder="Maria da Silva">
+            </div>
+            <div class="inputBox">
+                <h3>Telefone</h3>
+                <input type="number" label="Número Telefone" placeholder="(xx)xxxxx-xxxx" max="10">
+            </div>
+        </div>
+        <div>
+            <div class="inputBox">
+                <h3>Cep</h3>
+                <input type="number" label="Cep" placeholder="00000-000" maxlength="8">
+            </div>
+        </div>
+        <div>
+            <div class="inputBox">
+                <h3>Logradouro</h3>
+                <input type="text" label="Logradouro" placeholder="Rua xxxxxx">
+            </div>
+            <div class="inputBox">
+                <h3>Número</h3>
+                <input type="number" label="Número Residência" placeholder="0000" maxlength="6">
+            </div>
+        </div>
+        <div>
+            <div class="inputBox">
+                <h3>Bairro</h3>
+                <input type="text" label="Bairro" placeholder="Jd. Porto">
+            </div>
+            <div class="inputBox">
+                <h3>Cidade</h3>
+                <input type="text" label="Cidade" placeholder="Cidade Grande">
+            </div>
+        </div>
+        <div>
+            <div class="inputBox">
+                <h3>Estado</h3>
+                <select name="estado" id="estado">
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AM">AM</option>
+                    <option value="AP">AP</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MG">MG</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="PR">PR</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SE">SE</option>
+                    <option value="SP">SP</option>
+                    <option value="TO">TO</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <h3>País</h3>
+                <input type="text" label="País" placeholder="País" value="Brasil" disabled aria-disabled="true">
+            </div>
+        </div>
+        <div class="totalBox">
+            <div class="finalCartActions">
+                <button
+                    aria-label="Cancelar"
+                    onclick="editEndereco()"
+                >
+                    Cancelar
+                </button>
+                <button
+                    aria-label="Salvar"
+                    onclick="editEndereco()"
+                >
+                    Salvar
+                </button>
+            </div>
+        </div>
+    </aside>
+    <hr />
+</section>
+
+<section id="pagamento">
+    <header>
+        <h2>Forma de Pagamento</h2>
+    </header>
+
+    <aside class="payment">
+        <div class="paymentMethod">
+            <button
+              type="submit"
+              class="remove"
+              aria-label="Boleto Bancário"
+              title="Boleto Bancário"
+              onclick="boletoMethod()"
+            >
+              <span class="iconify nav-icon" data-icon="mdi:barcode-scan"></span>
+            </button>
+                <button
+              type="submit"
+              class="remove"
+              aria-label="Cartão de Crédito"
+              title="Cartão de Crédito"
+              onclick="creditCardMethod()"
+            >
+              <span class="iconify nav-icon" data-icon="mdi:credit-card-outline"></span>
+            </button>
+        </div>
+        <hr>
+        <h2 id="boleto">R$ 50,40 à vista no Boleto Bancário</h2>
+        <div id="creditCard" hidden>
+            <div>
+                <div class="inputBox">
+                    <h3>Nome Completo no Cartão</h3>
+                    <input type="text" label="Nome" placeholder="Maria da Silva">
+                </div>
+            </div>
+            <div>
+                <div class="inputBox">
+                    <h3>Número do Cartão de Crédito</h3>
+                    <input type="number" label="Número do Cartão" placeholder="xxxx-xxxx-xxxx-xxxx" maxlength="16">
+                </div>
+            </div>
+            <div>
+                <div class="inputBox">
+                    <h3>Data de Expiração</h3>
+                    <input type="number" label="Data Expiração" placeholder="MM/AAAA">
+                </div>
+                <div class="inputBox">
+                    <h3>
+                        CVV
+                        <span class="iconify nav-icon" data-icon="mdi:credit-card"></span>
+                    </h3>
+                    <input type="number" label="CVV" placeholder="xxx" maxlength="3">
+                </div>
+            </div>
+            <div>
+                <div class="inputBox">
+                    <h3>Parcelamento</h3>
+                    <select name="parcelamento" id="parcelamento">
+                        <option value="1">1x R$50,40</option>
+                        <option value="2">2x R$29,00</option>
+                        <option value="3">3x R$19,34</option>
+                        <option value="4">4x R$14,50</option>
+                        <option value="5">5x R$11,6</option>
+                        <option value="6">6x R$9,67</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="finalCartActions">
+            <a href="index.html" aria-label="Efetuar Pagamento">
+                <button>
+                    Efetuar Pagamento
+                </button>
+            </a>
+        </div>
+    </aside>
+</section>
+
+<script>
+    function editEndereco() {
+        document.getElementById("editEndereco").toggleAttribute("hidden");
+        document.getElementById("infoEndereco").toggleAttribute("hidden");
+    }
+    function boletoMethod() {
+        document.getElementById("boleto").removeAttribute("hidden");
+        document.getElementById("creditCard").setAttribute("hidden", "");
+    }
+    function creditCardMethod() {
+        document.getElementById("boleto").setAttribute("hidden", "");
+        document.getElementById("creditCard").removeAttribute("hidden");
+    }
+</script>
