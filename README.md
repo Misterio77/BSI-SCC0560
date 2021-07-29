@@ -1,10 +1,9 @@
----
-title: Readme
----
 # Cinco Bola
-O site está disponível em [cincobola.misterio.me](https://cincobola.misterio.me)
+O site pode ser visitado em [cincobola.misterio.me](https://cincobola.misterio.me)
 
-Esse README pode ser [lido direto no site](https://cincobola.misterio.me/README).
+Nosso repositório está disponível em [github.com/misterio77/cincobola](https://github.com/misterio77/cincobola)
+
+E esse README pode ser [lido direto no site](https://cincobola.misterio.me/README)!
 
 ## Stack usada
 O site é 100% estático.
