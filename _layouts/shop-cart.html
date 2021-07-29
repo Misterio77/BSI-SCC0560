@@ -4,7 +4,7 @@ title: Carrinho
 ---
 
 <header>
-  <nav arialabel="breadcrumbs" class="breadcrumb">
+  <nav aria-label="breadcrumbs" class="breadcrumb">
     <ol>
       <li><a href="/shops/{{ page.shop.slug }}">Home</a></li>
       <li>
@@ -66,11 +66,9 @@ title: Carrinho
     </button>
   </form>
   {% endfor %}
-</section>
 
-<hr />
+  <hr />
 
-<section>
   <form onsubmit="showShipping();return false">
     <h2>Calcular frete</h2>
     <label for="cep">CEP:</label>
@@ -78,7 +76,6 @@ title: Carrinho
       id="cep"
       type="text"
       inputmode="numeric"
-      label="CEP"
       placeholder="12345678"
       maxlength="8"
       pattern="[0-9]{8}"
@@ -86,20 +83,24 @@ title: Carrinho
     <button>Calcular</button>
   </form>
 
-  <form method="get" action="/shops/{{ page.shop.slug }}/payment" class="summary">
+  <form
+    method="get"
+    action="/shops/{{ page.shop.slug }}/payment"
+    class="summary"
+  >
     <div>
       <h3>Subtotal</h3>
-      <p> {{ page.subtotal }}</p>
+      <p>{{ page.subtotal }}</p>
     </div>
     <div>
       <h3>Frete</h3>
-      <p class="shipping" hidden> {{ page.shipping }}</p>
+      <p class="shipping" hidden>{{ page.shipping }}</p>
     </div>
     <hr />
     <div>
       <h3>Total</h3>
-      <p class="without-shipping"> {{ page.subtotal }}</p>
-      <p class="with-shipping" hidden> {{ page.total }}</p>
+      <p class="without-shipping">{{ page.subtotal }}</p>
+      <p class="with-shipping" hidden>{{ page.total }}</p>
     </div>
     <hr />
     <a href="/shops/{{ page.shop.slug }}"><em>Voltar</em></a>

@@ -5,7 +5,7 @@ inverted-nav-on-scroll: 200
 ---
 
 <header>
-  <nav arialabel="breadcrumbs" class="breadcrumb">
+  <nav aria-label="breadcrumbs" class="breadcrumb">
     <ol>
       <li>
         <a href="/shops/{{ page.shop.slug }}" aria-current="page">Home</a>
@@ -14,31 +14,23 @@ inverted-nav-on-scroll: 200
   </nav>
 </header>
 
-<header>
-  <h1>Categorias</h1>
-  <section>
-    <nav>
-      <ol>
-        {% for category in page.categories %}
-        <li><a href="#{{ category.slug }}">{{ category.name }}</a></li>
-        {% endfor %}
-      </ol>
-    </nav>
-  </section>
-</header>
+<section>
+  <header>
+    <h1>Categorias</h1>
+  </header>
+  <nav>
+    <ol>
+      {% for category in page.categories %}
+      <li><a href="#{{ category.slug }}">{{ category.name }}</a></li>
+      {% endfor %}
+    </ol>
+  </nav>
+</section>
 
 {% for category in page.categories %}
 <hr />
 
 <section class="listing" id="{{ category.slug }}">
-  <nav arialabel="breadcrumbs" class="breadcrumb">
-    <ol>
-      <li><a href="#">Categorias</a></li>
-      <li>
-        <a href="#{{ category.slug }}" aria-current="page">{{ category.name }}</a>
-      </li>
-    </ol>
-  </nav>
   <header>
     <h2>{{ category.name }}</h2>
   </header>
@@ -51,17 +43,17 @@ inverted-nav-on-scroll: 200
     <aside class="product">
       <figure>
         <img alt="{{ product.name }}" src="{{ product.image }}" />
+        <figcaption>
+          <h3>{{ product.name }}</h3>
+          {{ product.price }}
+        </figcaption>
       </figure>
-      <figcaption>
-        <h3>{{ product.name }}</h3>
-        {{ product.price }}
-      </figcaption>
     </aside>
   </a>
   {% endfor %}
+  <footer>
+  </footer>
 </section>
 {% endfor %}
 <hr />
-<section>
-  <a href="#">Voltar ao topo</a>
-</section>
+<nav><a href="#">Voltar ao topo</a></nav>

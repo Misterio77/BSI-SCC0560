@@ -4,24 +4,17 @@ title: Criar loja
 ---
 
 <section>
+  <header><h1>Crie uma nova loja</h1></header>
   <form method="get" action="/console">
-    <header><h1>Crie uma nova loja</h1></header>
-
     <label for="name">Nome: </label>
     <small>Pode ter espaços, símbolos, o que quiser</small>
-    <input
-      type="text"
-      inputmode="text"
-      name="name"
-      placeholder="Atlética Uniesquina ⚽"
-    />
+    <input type="text" id="name" placeholder="Atlética Uniesquina ⚽" />
 
     <label for="slug">Identificador: </label>
     <small>Letras minúsculas e hífens (usado para URLs)</small>
     <input
       type="text"
-      inputmode="text"
-      name="slug"
+      id="slug"
       placeholder="atletica-uniesquina"
       pattern="[a-z\-]+"
     />
@@ -33,58 +26,58 @@ title: Criar loja
       <div>
         <label for="dark-color">Cor escura: </label>
         <small>Bom contraste com branco</small>
-        <input type="color" name="dark-color" value="#28645f" />
+        <input type="color" id="dark-color" value="#28645f" />
       </div>
 
       <div>
         <label for="light-color">Cor clara: </label>
         <small>Bom contraste com preto</small>
-        <input
-          type="color"
-          name="light-color"
-          value="#8bddd1"
-        />
+        <input type="color" id="light-color" value="#8bddd1" />
       </div>
     </div>
     <small>
-      <p>Você pode testar as cores nesta página <br />(experimente o ícone no rodapé)</p>
+      Você pode testar as cores nesta página <br />(experimente o ícone no
+      rodapé)
     </small>
 
     <hr />
 
     <label for="logo">Logo: </label>
     <small>Seu logo, em SVG</small>
-    <input type="file" name="logo" accept="image/svg+xml" />
+    <input type="file" id="logo" accept="image/svg+xml" />
 
     <button type="submit">Criar</button>
   </form>
 </section>
 <script>
-  var darkInput = document.querySelector("input[name='dark-color']");
-  var lightInput = document.querySelector("input[name='light-color']");
-  var nameInput = document.querySelector("input[name='name']");
-  var slugInput = document.querySelector("input[name='slug']");
+  var darkInput = document.querySelector("#dark-color");
+  var lightInput = document.querySelector("#light-color");
+  var nameInput = document.querySelector("#name");
+  var slugInput = document.querySelector("#slug");
   var useNameLink = document.querySelector(".use-name");
 
   slugHasBeenTouched = false;
 
-  darkInput.addEventListener("input", function() {
-      document.documentElement.style.setProperty('--color-dark', darkInput.value);
+  darkInput.addEventListener("input", function () {
+    document.documentElement.style.setProperty("--color-dark", darkInput.value);
   });
-  lightInput.addEventListener("input", function() {
-      document.documentElement.style.setProperty('--color-light', lightInput.value);
+  lightInput.addEventListener("input", function () {
+    document.documentElement.style.setProperty(
+      "--color-light",
+      lightInput.value
+    );
   });
-  nameInput.addEventListener("input", function() {
-      document.querySelectorAll("nav .logo .title").forEach(function(x) {
-        x.innerHTML = nameInput.value;
-      });
-      if (!slugHasBeenTouched) {
-        slugInput.value = slugify(nameInput.value);
-      }
+  nameInput.addEventListener("input", function () {
+    document.querySelectorAll("nav .logo .title").forEach(function (x) {
+      x.innerHTML = nameInput.value;
+    });
+    if (!slugHasBeenTouched) {
+      slugInput.value = slugify(nameInput.value);
+    }
   });
-  slugInput.addEventListener("input", function() {
-      useNameLink.hidden = false;
-      slugHasBeenTouched = true;
+  slugInput.addEventListener("input", function () {
+    useNameLink.hidden = false;
+    slugHasBeenTouched = true;
   });
 
   function resetSlug() {
@@ -93,23 +86,24 @@ title: Criar loja
     slugInput.value = slugify(nameInput.value);
   }
   // https://gist.github.com/codeguy/6684588
-  function slugify (str) {
-      str = str.replace(/^\s+|\s+$/g, ''); // trim
-      str = str.toLowerCase();
-    
-      // remove accents, swap ñ for n, etc
-      var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
-      var to   = "aaaaeeeeiiiioooouuuunc------";
-      for (var i=0, l=from.length ; i<l ; i++) {
-          str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
-      }
+  function slugify(str) {
+    str = str.replace(/^\s+|\s+$/g, ""); // trim
+    str = str.toLowerCase();
 
-      str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
-          .replace(/\s+$/g, '') // remove trailing spaces
-          .replace(/\A\s+/g, '') // remove leading spaces
-          .replace(/\s+/g, '-') // collapse whitespace and replace by -
-          .replace(/-+/g, '-'); // collapse dashes
+    // remove accents, swap ñ for n, etc
+    var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
+    var to = "aaaaeeeeiiiioooouuuunc------";
+    for (var i = 0, l = from.length; i < l; i++) {
+      str = str.replace(new RegExp(from.charAt(i), "g"), to.charAt(i));
+    }
 
-      return str;
+    str = str
+      .replace(/[^a-z0-9 -]/g, "") // remove invalid chars
+      .replace(/\s+$/g, "") // remove trailing spaces
+      .replace(/\A\s+/g, "") // remove leading spaces
+      .replace(/\s+/g, "-") // collapse whitespace and replace by -
+      .replace(/-+/g, "-"); // collapse dashes
+
+    return str;
   }
 </script>

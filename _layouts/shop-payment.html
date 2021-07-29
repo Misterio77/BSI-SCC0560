@@ -3,7 +3,7 @@ layout: shop
 ---
 
 <header>
-  <nav arialabel="breadcrumbs" class="breadcrumb">
+  <nav aria-label="breadcrumbs" class="breadcrumb">
     <ol>
       <li><a href="/shops/{{ page.shop.slug }}">Home</a></li>
       <li>
@@ -18,10 +18,10 @@ layout: shop
   </nav>
 </header>
 
-<header>
-  <h1>Finalizar compra</h1>
-</header>
 <section>
+  <header>
+    <h1>Finalizar compra</h1>
+  </header>
   <aside>
     <header>
       <h2>Endereço de Entrega</h2>
@@ -43,15 +43,26 @@ layout: shop
       form="finish"
       id="cep"
       type="text"
+      inputmode="numeric"
       placeholder="12345678"
       pattern="[0-9]{8}"
     />
 
     <label for="address-line-1">Logradouro</label>
-    <input form="finish" id="address-line-1" type="text" placeholder="Rua xxxxxx, nro xx" />
+    <input
+      form="finish"
+      id="address-line-1"
+      type="text"
+      placeholder="Rua xxxxxx, nro xx"
+    />
 
     <label for="address-line-2">Complemento</label>
-    <input form="finish" id="address-line-2" type="text" placeholder="Apto xx" />
+    <input
+      form="finish"
+      id="address-line-2"
+      type="text"
+      placeholder="Apto xx"
+    />
 
     <label for="city">Cidade</label>
     <input form="finish" id="city" type="text" placeholder="Cidade Grande" />
@@ -154,7 +165,12 @@ layout: shop
         pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})"
       />
       <label for="card-holder">Nome Completo no Cartão</label>
-      <input form="finish" id="card-holder" type="text" placeholder="Maria da Silva" />
+      <input
+        form="finish"
+        id="card-holder"
+        type="text"
+        placeholder="Maria da Silva"
+      />
 
       <label for="card-number">Número do Cartão de Crédito</label>
       <input
@@ -247,6 +263,8 @@ layout: shop
     document.querySelectorAll(".payment-method").forEach((x) => {
       x.removeAttribute("aria-current");
     });
-    document.querySelector(".payment-method." + method).setAttribute("aria-current", "location");
+    document
+      .querySelector(".payment-method." + method)
+      .setAttribute("aria-current", "location");
   }
 </script>

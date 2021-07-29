@@ -76,6 +76,9 @@ main {
 
 section header {
   padding: 1.5rem 1rem;
+  h1 {
+    font-size: 2em;
+  }
 }
 
 hr {
@@ -379,7 +382,8 @@ form {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow) var(--color-shadow);
   display: block;
-  width: var(--width-card);
+  min-width: var(--width-card);
+  max-width: var(--width-card-wide);
   padding: 1.25rem;
   text-align: var(--justify-normal);
 
