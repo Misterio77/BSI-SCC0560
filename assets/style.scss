@@ -111,7 +111,7 @@ section {
     box-shadow: var(--box-shadow) var(--color-shadow);
     margin: 0.95rem;
     padding: 1.25rem;
-    width: var(--width-card);
+    min-width: var(--width-card);
 
     /* Invert colors on full cards */
     &.inverted {
