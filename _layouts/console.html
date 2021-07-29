@@ -4,7 +4,7 @@ layout: default
 
 <header>
   <nav class="fixed">
-    <a href="/console/{{ page.shop.slug }}" class="logo">
+    <a href="/console/{{ page.shop.slug }}" class="logo" aria-label="{{ page.shop.name }} Console">
         {% if page.shop.slug %}{%- include logos/{{ page.shop.slug }}.svg -%}{% endif %}
         <span class="title">{{ page.shop.name }}</span> <small>Console</small>
       </a>
