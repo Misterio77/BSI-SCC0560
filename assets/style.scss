@@ -125,10 +125,6 @@ section {
         }
       }
     }
-    img {
-      width: 285px;
-      height: 285px;
-    }
   }
 }
 
@@ -737,8 +733,12 @@ a[aria-current] {
     font-size: 1.3em;
   }
   figure img {
-    @media (max-width: 876px) {
-      max-width: 340px;
+    object-fit: cover;
+    width: 480px;
+    height: 480px;
+    @media (max-width: 880px) {
+      width: 340px;
+      height: 340px;
     }
   }
 }
@@ -767,9 +767,12 @@ a[aria-current] {
       align-items: center;
 
       img {
-        max-width: 150px;
+        object-fit: cover;
+        width: 150px;
+        height: 150px;
         @media (max-width: 620px) {
-          max-width: 70px;
+          width: 70px;
+          height: 70px;
         }
       }
       figcaption {

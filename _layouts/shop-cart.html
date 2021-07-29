@@ -37,31 +37,33 @@ title: Carrinho
       </figure>
     </a>
     <div>
-      <label for="amount">Unidades:</label>
+      <label for="amount-{{ product.slug }}">Unidades:</label>
       <input
         type="number"
         name="unidades"
-        id="amount"
+        class="amount"
+        id="amount-{{ product.slug }}"
         value="1"
         min="0"
         max="{% if product.available %}{{product.available}}{% else %}99{% endif %}"
       />
     </div>
-    <button type="submit" class="update">
-      <span
-        class="iconify nav-icon"
-        data-icon="mdi:check"
-        aria-label="Atualizar quantidade"
-        title="Atualizar quantidade"
-      ></span>
+    <button
+      type="submit"
+      class="update"
+      aria-label="Atualizar quantidade"
+      title="Atualizar quantidade"
+    >
+      <span class="iconify nav-icon" data-icon="mdi:check"></span>
     </button>
-    <button type="submit" class="remove" hidden>
-      <span
-        class="iconify nav-icon"
-        data-icon="mdi:delete"
-        aria-label="Remover do carrinho"
-        title="Remover do carrinho"
-      ></span>
+    <button
+      type="submit"
+      class="remove"
+      aria-label="Remover do carrinho"
+      title="Remover do carrinho"
+      hidden
+    >
+      <span class="iconify nav-icon" data-icon="mdi:delete"></span>
     </button>
   </form>
   {% endfor %}
@@ -74,11 +76,12 @@ title: Carrinho
     <h2>Calcular frete</h2>
     <label for="cep">CEP:</label>
     <input
-      type="text"
+      id="cep"
+      type="number"
       label="CEP"
-      placeholder="00000-000"
-      maxlength="9"
-      pattern="[0-9]{5}-[0-9]{3}"
+      placeholder="12345678"
+      maxlength="8"
+      pattern="[0-9]{8}"
     />
     <button>Calcular</button>
   </form>
