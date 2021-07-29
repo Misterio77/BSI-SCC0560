@@ -18,6 +18,7 @@
   </ul>
   <div>
     <a
+      href="javascript:;"
       class="reset-scheme"
       onclick="resetScheme()"
       style="visibility: hidden"
@@ -27,15 +28,20 @@
       <span class="iconify nav-icon" data-icon="mdi:restore"></span>
     </a>
     <a
-      class="dark-scheme"
+      href="javascript:;"
+      class="toggle-scheme dark"
       onclick="toggleScheme()"
       aria-label="Alternar tema"
-      title="Alternar tema"
       hidden
     >
       <span class="iconify nav-icon" data-icon="mdi:weather-night"></span>
     </a>
-    <a class="light-scheme" onclick="toggleScheme()" aria-label="Alternar tema">
+    <a
+      href="javascript:;"
+      class="toggle-scheme light"
+      onclick="toggleScheme()"
+      aria-label="Alternar tema"
+    >
       <span class="iconify nav-icon" data-icon="mdi:weather-sunny"></span>
     </a>
   </div>
@@ -51,8 +57,8 @@
 <script>
   // Elementos
   const resetSchemeButton = document.querySelector(".reset-scheme");
-  const lightSchemeButton = document.querySelector(".light-scheme");
-  const darkSchemeButton = document.querySelector(".dark-scheme");
+  const lightSchemeButton = document.querySelector(".toggle-scheme.light");
+  const darkSchemeButton = document.querySelector(".toggle-scheme.dark");
 
   // Alterna o local storage e atualiza o tema
   function toggleScheme() {
