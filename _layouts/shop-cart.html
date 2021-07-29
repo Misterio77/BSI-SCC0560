@@ -22,7 +22,7 @@ title: Carrinho
   </header>
 
   {% for product in page.products %}
-  <form method="get" action="#">
+  <form class="product" method="get" action="#">
     <a
       href="/shops/{{ page.shop.slug }}/products/{{ product.slug }}"
       aria-label="{{ product.name }}"
@@ -40,10 +40,9 @@ title: Carrinho
       <label for="amount-{{ product.slug }}">Unidades:</label>
       <input
         type="number"
-        name="unidades"
         class="amount"
         id="amount-{{ product.slug }}"
-        value="1"
+        value="{{ product.amount }}"
         min="0"
         max="{% if product.available %}{{product.available}}{% else %}99{% endif %}"
       />
@@ -90,17 +89,17 @@ title: Carrinho
   <aside class="summary">
     <div>
       <h3>Subtotal</h3>
-      <p>R$ 34,30</p>
+      <p> {{ page.subtotal }}</p>
     </div>
     <div>
       <h3>Frete</h3>
-      <p class="shipping" hidden>R$ 12,00</p>
+      <p class="shipping" hidden> {{ page.shipping }}</p>
     </div>
     <hr />
     <div>
       <h3>Total</h3>
-      <p class="without-shipping">R$ 34,30</p>
-      <p class="with-shipping" hidden>R$ 46,30</p>
+      <p class="without-shipping"> {{ page.subtotal }}</p>
+      <p class="with-shipping" hidden> {{ page.total }}</p>
     </div>
     <hr />
     <a href="/shops/{{ page.shop.slug }}"><strong>Voltar</strong> </a>

@@ -107,9 +107,8 @@ section {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow) var(--color-shadow);
     margin: 0.95rem;
-    padding: 1.5rem;
-    min-width: var(--width-card);
-    max-width: var(--width-card-wide);
+    padding: 1.25rem;
+    width: var(--width-card);
 
     /* Invert colors on full cards */
     &.inverted {
@@ -126,105 +125,11 @@ section {
         }
       }
     }
-    img {
-      width: 285px;
-      height: 285px;
-      object-fit: cover;
-    }
-    &.enderecoInfo {
-      width: 90%;
-      span {
-        @media (max-width: 620px) {
-          display: flex;
-          flex-direction: column;
-        }
-        display: flex;
-        justify-content: space-between;
-        h4 {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-      }
-    }
-    &.enderecoEdit {
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-      div {
-        @media (max-width: 620px) {
-          display: flex;
-          flex-direction: column;
-        }
-        width: 100%;
-        display: flex;
-        // justify-content: space-around;
-        margin-right: 25px;
-        margin-bottom: 10px;
-      }
-    }
-    &.payment {
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-      .paymentMethod {
-        width: 90%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      div {
-        div {
-          @media (max-width: 620px) {
-            display: flex;
-            flex-direction: column;
-          }
-          width: 100%;
-          display: flex;
-          // justify-content: space-around;
-          margin-right: 25px;
-          margin-bottom: 10px;
-        }
-      }
-      h2 {
-        display: flex;
-        justify-content: center;
-      }
-    }
-  }
-}
-.finalCartActions {
-  display: flex;
-  justify-content: flex-end !important;
-  align-items: center !important;
-  margin-right: 0 !important;
-  margin-top: 30px;
-  button {
-    margin-left: 20px;
-    font-size: 1rem;
-  }
-}
-
-.inputBox {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
-  }
-  input,
-  select {
-    box-sizing: border-box;
-    background-color: rgba(white, 0);
-    margin: 0;
-    height: 32px;
-    color: var(--color-text);
   }
 }
 
 [hidden] {
-  display: none !important;
+  display: none;
 }
 
 article header,
@@ -474,9 +379,8 @@ form {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow) var(--color-shadow);
   display: block;
-  max-width: var(--width-card-wide);
-  min-width: var(--width-card);
-  padding: 1.5rem;
+  width: var(--width-card);
+  padding: 1.25rem;
   text-align: var(--justify-normal);
 
   header {
@@ -819,7 +723,14 @@ a[aria-current] {
   font-size: 14em;
 }
 
-.product {
+.listing .product {
+  img {
+    height: 285px;
+    width: 285px;
+    object-fit: cover;
+  }
+}
+.detail .product {
   justify-content: space-around;
   h1 {
     font-size: 1.5em;
@@ -837,42 +748,40 @@ a[aria-current] {
     }
   }
 }
-.cart {
-  form {
-    display: flex;
-    @media (max-width: 431px) {
-      display: block;
-    }
+.cart .product {
+  display: flex;
+  @media (max-width: 431px) {
+    display: block;
+  }
+  justify-content: space-between;
+  align-items: center;
+
+  width: 80%;
+  h2 {
+    font-size: 1.3em;
+  }
+  button {
+    padding: 0.4em 0.5em;
+  }
+  input#amount {
+    max-width: 50px;
+  }
+  figure {
+    display: inline-flex;
     justify-content: space-between;
     align-items: center;
 
-    width: 80%;
-    h2 {
-      font-size: 1.3em;
-    }
-    button {
-      padding: 0.4em 0.5em;
-    }
-    input#amount {
-      max-width: 50px;
-    }
-    figure {
-      display: inline-flex;
-      justify-content: space-between;
-      align-items: center;
-
-      img {
-        object-fit: cover;
-        width: 150px;
-        height: 150px;
-        @media (max-width: 620px) {
-          width: 70px;
-          height: 70px;
-        }
+    img {
+      object-fit: cover;
+      width: 150px;
+      height: 150px;
+      @media (max-width: 620px) {
+        width: 70px;
+        height: 70px;
       }
-      figcaption {
-        margin-left: 2em;
-      }
+    }
+    figcaption {
+      margin-left: 2em;
     }
   }
 }

@@ -21,7 +21,7 @@ layout: shop
 {% for category in page.categories %}
 <hr />
 
-<section id="{{ category.slug }}">
+<section class="listing" id="{{ category.slug }}">
   <nav arialabel="breadcrumbs" class="breadcrumb">
     <ol>
       <li><a href="#">Categorias</a></li>
@@ -34,7 +34,7 @@ layout: shop
 
   {% for product in category.products %}
   <a href="/shops/{{ page.shop.slug }}/products/{{ product.slug }}" title="{{ product.name }}">
-    <aside>
+    <aside class="product">
       <figure>
         <img
           alt="{{ product.name }}"
