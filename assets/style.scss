@@ -764,7 +764,7 @@ button[aria-current] {
   justify-content: space-between;
   align-items: center;
 
-  width: 80%;
+  min-width: 80%;
   h2 {
     font-size: 1.3em;
   }
