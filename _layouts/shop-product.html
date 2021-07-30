@@ -31,7 +31,7 @@ layout: shop
       name="produto"
       value="{{ page.product.slug }}"
     />
-    {% if page.clothing-sizes %}
+    {% if page.product.sizes == true %}
     <label for="size">Tamanho:</label>
     <select
       name="tamanho"
